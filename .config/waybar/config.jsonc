@@ -6,32 +6,16 @@
   // "width": 1280, // Waybar width
   "spacing": 4, // Gaps between modules (4px)
   // Choose the order of the modules
-  "modules-left": [
-    "hyprland/window",
-    "custom/media",
-    "cpu",
-    "memory",
-    "temperature"
-  ],
+  "modules-left": ["hyprland/window"],
   "modules-center": [
+    "group/monitoring",
+    "custom/media",
     "hyprland/workspaces",
-    "hyprland/mode",
-    "hyprland/scratchpad",
     "clock",
-    "idle_inhibitor",
-    "custom/screenshot-region"
-  ],
-  "modules-right": [
-    "mpd",
-    "pulseaudio",
-    "pulseaudio#microphone",
-    "backlight",
-    "network",
-    "bluetooth",
-    "power-profiles-daemon",
-    "tray",
+    "group/utils",
     "battery"
   ],
+  "modules-right": ["tray", "group/audio", "backlight", "group/networking"],
   "hyprland/workspaces": {
     "format": "{icon}",
     "justify": "center",
@@ -50,41 +34,22 @@
       "unlocked": ""
     }
   },
-  "hyprland/mode": {
-    "format": "<span style=\"italic\">{}</span>"
+
+  "group/utils": {
+    "orientation": "horizontal",
+    "modules": ["idle_inhibitor", "custom/screenshot-region"]
   },
-  "hyprland/scratchpad": {
-    "format": "{icon} {count}",
-    "show-empty": false,
-    "format-icons": ["", ""],
-    "tooltip": true,
-    "tooltip-format": "{app}: {title}"
+  "group/audio": {
+    "orientation": "horizontal",
+    "modules": ["pulseaudio", "pulseaudio#microphone"]
   },
-  "mpd": {
-    "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
-    "format-disconnected": "Disconnected ",
-    "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
-    "unknown-tag": "N/A",
-    "interval": 5,
-    "consume-icons": {
-      "on": " "
-    },
-    "random-icons": {
-      "off": "<span color=\"#f53c3c\"></span> ",
-      "on": " "
-    },
-    "repeat-icons": {
-      "on": " "
-    },
-    "single-icons": {
-      "on": "1 "
-    },
-    "state-icons": {
-      "paused": "",
-      "playing": ""
-    },
-    "tooltip-format": "MPD (connected)",
-    "tooltip-format-disconnected": "MPD (disconnected)"
+  "group/networking": {
+    "orientation": "horizontal",
+    "modules": ["network", "bluetooth"]
+  },
+  "group/monitoring": {
+    "orientation": "horizontal",
+    "modules": ["cpu", "memory", "temperature"]
   },
   "idle_inhibitor": {
     "format": "{icon}",
@@ -232,6 +197,6 @@
     "format": "",
     "on-click": "$HOME/.config/hypr/scripts/screenshot-region.sh",
     "justify": "center",
-    "tooltip-format":"Screenshot"
+    "tooltip-format": "Screenshot"
   }
 }
