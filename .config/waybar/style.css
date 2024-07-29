@@ -46,12 +46,14 @@ button {
   padding: 0 5px;
   background-color: transparent;
   border-radius: 26px;
+  color: rgb(255, 255, 255)
 }
 
 #workspaces button.active {
   background-color: rgba(255, 255, 255, 0.187);
   color: #ffffff;
 }
+
 
 #workspaces button.urgent {
   background-color: #eb4d4b;
