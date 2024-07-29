@@ -1,6 +1,9 @@
 allow_images=true
-hide_scroll=true
-no_actions=false
+no_actions=true
 term=kitty
-mode=drun
+show=drun
+prompt=Apps
 single_click=true
+width=34%
+height=34%
+matching=multi-contains

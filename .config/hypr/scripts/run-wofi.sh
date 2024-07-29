@@ -2,5 +2,5 @@
 
 
 if ! pgrep -x wofi >/dev/null; then
-    wofi --show drun &
+    wofi &
 fi
