@@ -1,9 +1,0 @@
-allow_images=true
-no_actions=true
-term=kitty
-show=drun
-prompt=Apps
-single_click=true
-width=34%
-height=34%
-matching=multi-contains

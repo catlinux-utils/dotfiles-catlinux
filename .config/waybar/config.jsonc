@@ -9,14 +9,13 @@
   "modules-left": ["hyprland/window"],
   "modules-center": [
     "group/monitoring",
-    "custom/media",
     "custom/applauncher",
     "hyprland/workspaces",
     "clock",
     "group/utils",
     "battery"
   ],
-  "modules-right": ["tray", "group/audio", "backlight", "group/networking"],
+  "modules-right": ["tray","hyprland/language", "group/audio", "backlight", "group/networking"],
   "hyprland/workspaces": {
     "format": "{icon}",
     "justify": "center",
@@ -26,6 +25,9 @@
       "*": 10
     }
   },
+  "hyprland/language": {
+    "format": "Lang: {}"
+},
   "keyboard-state": {
     "numlock": true,
     "capslock": true,
@@ -169,30 +171,6 @@
     "format-source-muted": " ",
     "on-click": "pavucontrol -t 4"
   },
-  "custom/media": {
-    "format": "{icon} {}",
-    "return-type": "json",
-    "max-length": 40,
-    "format-icons": {
-      "spotify": "",
-      "default": "🎜"
-    },
-    "escape": true,
-    "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
-    // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
-  },
-  "custom/power": {
-    "format": "⏻ ",
-    "tooltip": false,
-    "menu": "on-click",
-    "menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
-    "menu-actions": {
-      "shutdown": "shutdown",
-      "reboot": "reboot",
-      "suspend": "systemctl suspend",
-      "hibernate": "systemctl hibernate"
-    }
-  },
   "custom/screenshot-region": {
     "format": "",
     "on-click": "$HOME/.config/hypr/scripts/screenshot-region.sh",
@@ -201,6 +179,6 @@
   },
   "custom/applauncher":{
     "format": "",
-    "on-click":"$HOME/.config/hypr/scripts/run-wofi.sh"
+    "on-click":"pidof rofi &killall rofi ||rofi -show drun"
   }
 }
