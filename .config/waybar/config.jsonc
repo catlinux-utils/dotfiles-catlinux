@@ -10,6 +10,7 @@
   "modules-center": [
     "group/monitoring",
     "custom/media",
+    "custom/applauncher",
     "hyprland/workspaces",
     "clock",
     "group/utils",
@@ -107,7 +108,6 @@
     "format-full": " {capacity}% {icon} ",
     "format-charging": " {capacity}% ",
     "format-plugged": " {capacity}%  ",
-    "format-alt": " {time} {icon} ",
     // "format-good": "", // An empty format will hide the module
     // "format-full": "",
     "format-icons": ["", "", "", "", ""]
@@ -198,5 +198,9 @@
     "on-click": "$HOME/.config/hypr/scripts/screenshot-region.sh",
     "justify": "center",
     "tooltip-format": "Screenshot"
+  },
+  "custom/applauncher":{
+    "format": "",
+    "on-click":"$HOME/.config/hypr/scripts/run-wofi.sh"
   }
 }
