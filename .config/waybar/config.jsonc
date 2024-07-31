@@ -34,16 +34,6 @@
   "hyprland/language": {
     "format": "Lang: {}"
   },
-  "keyboard-state": {
-    "numlock": true,
-    "capslock": true,
-    "format": "{name} {icon}",
-    "format-icons": {
-      "locked": "",
-      "unlocked": ""
-    }
-  },
-
   "group/utils": {
     "orientation": "horizontal",
     "modules": ["idle_inhibitor", "custom/screenshot-region"]
@@ -68,6 +58,15 @@
       "deactivated": "󱑎"
     },
     "tooltip-format": "Idle inhibitor"
+  },
+  "keyboard-state": {
+    "numlock": true,
+    "capslock": true,
+    "format": "{name} {icon}",
+    "format-icons": {
+      "locked": "",
+      "unlocked": ""
+    }
   },
   "tray": {
     // "icon-size": 21,
