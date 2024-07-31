@@ -15,7 +15,13 @@
     "group/utils",
     "battery"
   ],
-  "modules-right": ["tray","hyprland/language", "group/audio", "backlight", "group/networking"],
+  "modules-right": [
+    "tray",
+    "hyprland/language",
+    "group/audio",
+    "backlight",
+    "group/networking"
+  ],
   "hyprland/workspaces": {
     "format": "{icon}",
     "justify": "center",
@@ -27,7 +33,7 @@
   },
   "hyprland/language": {
     "format": "Lang: {}"
-},
+  },
   "keyboard-state": {
     "numlock": true,
     "capslock": true,
@@ -177,8 +183,8 @@
     "justify": "center",
     "tooltip-format": "Screenshot"
   },
-  "custom/applauncher":{
+  "custom/applauncher": {
     "format": "",
-    "on-click":"pidof rofi &killall rofi ||rofi -show drun"
+    "on-click": "pidof rofi &killall rofi ||rofi -show drun"
   }
 }
