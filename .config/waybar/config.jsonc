@@ -178,7 +178,7 @@
   "custom/applauncher": {
     "format": "{icon} {}",
     "format-icons": [""],
-    "on-click": "pidof rofi &killall rofi ||rofi -show drun -location 1",
+    "on-click": "pidof rofi &killall rofi ||rofi -show drun -location 1 -config ~/.config/rofi/menu.rasi",
     "justify": "center"
   }
 }
