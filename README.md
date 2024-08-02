@@ -1,7 +1,7 @@
 <h1 align="center">dotfiles-waybar</h1>
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/7649931e-3b8a-40c1-b5eb-df203a67d2aa" alt="screenshot" width="600">
-  <img src="https://github.com/user-attachments/assets/7d327942-7073-4c06-af9e-08aedbe059af" alt="screenshot" width="600">
+  <img src="https://github.com/user-attachments/assets/7d327942-7073-4c06-af9e-08aedbe059af" alt="screenshot" >
+  <img src="https://github.com/user-attachments/assets/7649931e-3b8a-40c1-b5eb-df203a67d2aa" alt="screenshot" >
 </p>
 
 <h2 align="center">Requirements</h2>
@@ -31,4 +31,3 @@
 </details>
 
 <br>
-
