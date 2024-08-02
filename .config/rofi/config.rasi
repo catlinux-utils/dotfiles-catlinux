@@ -53,12 +53,12 @@ configuration {
 window {
     /* properties for window widget */
     transparency:                "real";
-    location:                    north;
-    anchor:                      center;
+    anchor:                      north;
+    location:                    1;
     fullscreen:                  false;
     width:                       600px;
-    x-offset:                    0px;
-    y-offset:                    0px;
+    x-offset:                    4px;
+    y-offset:                    4px;
 
     /* properties for all widgets */
     enabled:                     true;
@@ -85,7 +85,7 @@ mainbox {
     enabled:                     true;
     spacing:                     10px;
     margin:                      0px;
-    padding:                     30px;
+    padding:                     5px;
     border:                      0px solid;
     border-radius:               0px 0px 0px 0px;
     border-color:                @border-colour;
@@ -114,7 +114,7 @@ prompt {
 }
 textbox-prompt-colon {
     enabled:                     true;
-    padding:                     5px 0px;
+    padding:                     5px 5px;
     expand:                      false;
     str:                         "";
     background-color:            inherit;

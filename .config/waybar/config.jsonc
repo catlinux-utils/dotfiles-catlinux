@@ -6,20 +6,16 @@
   // "width": 1280, // Waybar width
   "spacing": 4, // Gaps between modules (4px)
   // Choose the order of the modules
-  "modules-left": ["hyprland/window"],
-  "modules-center": [
-    "group/monitoring",
-    "custom/applauncher",
-    "hyprland/workspaces",
-    "clock",
-    "group/utils",
-    "battery"
-  ],
+  "modules-left": ["hyprland/workspaces", "custom/applauncher"],
+  "modules-center": ["hyprland/window"],
   "modules-right": [
-    "tray",
+    "group/utils",
+    "group/monitoring",
+    "battery",
     "group/audio",
-    "backlight",
-    "group/networking"
+    "group/networking",
+    "tray",
+    "clock"
   ],
   "hyprland/workspaces": {
     "format": "{icon}",
@@ -27,7 +23,7 @@
     "on-scroll-up": "hyprctl dispatch workspace -1",
     "on-scroll-down": "hyprctl dispatch workspace +1",
     "persistent-workspaces": {
-      "*": 10
+      "*": 15
     }
   },
   "group/utils": {
@@ -69,7 +65,8 @@
     "spacing": 10
   },
   "clock": {
-    "format": "{:%H:%M   %A,  %m/%d}",
+    "format": "{:%H:%M}  ",
+    "format-alt": "{:%A, %B %d, %Y (%R)}  ",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
     "justify": "center"
   },
@@ -93,7 +90,7 @@
   "backlight": {
     //"device": "intel_backlight",
     "rotate": 0,
-    "format": "{icon}  {percent}%",
+    "format": "{icon} {percent}%",
     "format-icons": ["", "", "", "", "", "", "", "", " "],
     "on-scroll-up": "brightnessctl set 1%+",
     "on-scroll-down": "brightnessctl set 1%-",
@@ -179,7 +176,9 @@
     "tooltip-format": "Screenshot"
   },
   "custom/applauncher": {
-    "format": "",
-    "on-click": "pidof rofi &killall rofi ||rofi -show drun"
+    "format": "{icon} {}",
+    "format-icons": [""],
+    "on-click": "pidof rofi &killall rofi ||rofi -show drun -location 1",
+    "justify": "center"
   }
 }
