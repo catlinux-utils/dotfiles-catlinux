@@ -1,24 +1,34 @@
-# dotfiles-waybar
-![image](https://github.com/user-attachments/assets/7649931e-3b8a-40c1-b5eb-df203a67d2aa)
-![image](https://github.com/user-attachments/assets/7d327942-7073-4c06-af9e-08aedbe059af)
+<h1 align="center">dotfiles-waybar</h1>
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/7649931e-3b8a-40c1-b5eb-df203a67d2aa" alt="screenshot" width="600">
+  <img src="https://github.com/user-attachments/assets/7d327942-7073-4c06-af9e-08aedbe059af" alt="screenshot" width="600">
+</p>
 
+<h2 align="center">Requirements</h2>
 
-Requirements:
-- [hyprland](https://github.com/hyprwm/hyprland) (Arch: [hyprland](https://archlinux.org/packages/extra/x86_64/hyprland))
-- [swww](https://github.com/LGFae/swww) (Arch: [swww](https://archlinux.org/packages/extra/x86_64/swww))
-- [hyprlock](https://github.com/hyprwm/hyprlock) (Arch: [hyprlock](https://archlinux.org/extra/extra/x86_64/hyprlock))
-- [hypridle](https://github.com/hyprwm/hypridle) (Arch: [hypridle](https://archlinux.org/packages/extra/x86_64/hypridle))
-- [waybar](https://github.com/Alexays/Waybar) (Arch: [waybar](https://archlinux.org/packages/extra/x86_64/waybar))
-- [rofi-wayland](https://github.com/lbonn/rofi) (Arch: [rofi-wayland](https://archlinux.org/packages/extra/x86_64/rofi-wayland))
-- [MesloLGS Nerd Font](https://github.com/ryanoasis/nerd-fonts/) (Arch: [ttf-meslo-nerd](https://archlinux.org/packages/extra/any/ttf-meslo-nerd/))
-- qt5-wayland qt6-wayland
-- [grim](https://sr.ht/~emersion/grim/) (Arch: [grim](https://archlinux.org/packages/extra/x86_64/grim))
-- [slurp](https://github.com/emersion/slurp) (Arch: [slurp](https://archlinux.org/packages/extra/x86_64/slurp))
-- [wl-clipboard](https://github.com/bugaevc/wl-clipboard) (Arch: [wl-clipboard](https://archlinux.org/packages/extra/x86_64/wl-clipboard))
-- [gnome-keyring-daemon](https://gitlab.gnome.org/GNOME/gnome-keyring) (Arch: [gnome-keyring](https://archlinux.org/packages/extra/x86_64/gnome-keyring))
-- [polkit-kde-agent](https://invent.kde.org/plasma/polkit-kde-agent-1) (Arch: [polkit-kde-agent](https://archlinux.org/packages/extra/x86_64/polkit-kde-agent))
-- [network-manager-applet](https://gitlab.gnome.org/GNOME/network-manager-applet) (Arch: [network-manager-applet](https://archlinux.org/packages/extra/x86_64/network-manager-applet))
-- [kitty](https://github.com/kovidgoyal/kitty) (Arch: [kitty](https://archlinux.org/packages/extra/x86_64/kitty))
-- [thorium-browser](https://github.com/Alex313031/thorium) (Arch: [thorium](https://aur.archlinux.org/packages/thorium-browser-bin))
-- [vscode](https://github.com/microsoft/vscode) (Arch: [code](https://archlinux.org/packages/extra/x86_64/code))
+<details>
+  <summary>Click to expand</summary>
+  
+  <ul>
+    <li><a href="https://github.com/hyprwm/hyprland">hyprland</a> (Arch: <a href="https://archlinux.org/packages/extra/x86_64/hyprland">hyprland</a>)</li>
+    <li><a href="https://github.com/LGFae/swww">swww</a> (Arch: <a href="https://archlinux.org/packages/extra/x86_64/swww">swww</a>)</li>
+    <li><a href="https://github.com/hyprwm/hyprlock">hyprlock</a> (Arch: <a href="https://archlinux.org/extra/extra/x86_64/hyprlock">hyprlock</a>)</li>
+    <li><a href="https://github.com/hyprwm/hypridle">hypridle</a> (Arch: <a href="https://archlinux.org/packages/extra/x86_64/hypridle">hypridle</a>)</li>
+    <li><a href="https://github.com/Alexays/Waybar">waybar</a> (Arch: <a href="https://archlinux.org/packages/extra/x86_64/waybar">waybar</a>)</li>
+    <li><a href="https://github.com/lbonn/rofi">rofi-wayland</a> (Arch: <a href="https://archlinux.org/packages/extra/x86_64/rofi-wayland">rofi-wayland</a>)</li>
+    <li><a href="https://github.com/ryanoasis/nerd-fonts/">MesloLGS Nerd Font</a> (Arch: <a href="https://archlinux.org/packages/extra/any/ttf-meslo-nerd">ttf-meslo-nerd</a>)</li>
+    <li>qt5-wayland qt6-wayland</li>
+    <li><a href="https://sr.ht/~emersion/grim/">grim</a> (Arch: <a href="https://archlinux.org/packages/extra/x86_64/grim">grim</a>)</li>
+    <li><a href="https://github.com/emersion/slurp">slurp</a> (Arch: <a href="https://archlinux.org/packages/extra/x86_64/slurp">slurp</a>)</li>
+    <li><a href="https://github.com/bugaevc/wl-clipboard">wl-clipboard</a> (Arch: <a href="https://archlinux.org/packages/extra/x86_64/wl-clipboard">wl-clipboard</a>)</li>
+    <li><a href="https://gitlab.gnome.org/GNOME/gnome-keyring">gnome-keyring-daemon</a> (Arch: <a href="https://archlinux.org/packages/extra/x86_64/gnome-keyring">gnome-keyring</a>)</li>
+    <li><a href="https://invent.kde.org/plasma/polkit-kde-agent-1">polkit-kde-agent</a> (Arch: <a href="https://archlinux.org/packages/extra/x86_64/polkit-kde-agent">polkit-kde-agent</a>)</li>
+    <li><a href="https://gitlab.gnome.org/GNOME/network-manager-applet">network-manager-applet</a> (Arch: <a href="https://archlinux.org/packages/extra/x86_64/network-manager-applet">network-manager-applet</a>)</li>
+    <li><a href="https://github.com/kovidgoyal/kitty">kitty</a> (Arch: <a href="https://archlinux.org/packages/extra/x86_64/kitty">kitty</a>)</li>
+    <li><a href="https://github.com/Alex313031/thorium">thorium-browser</a> (Arch: <a href="https://aur.archlinux.org/packages/thorium-browser-bin">thorium</a>)</li>
+    <li><a href="https://github.com/microsoft/vscode">vscode</a> (Arch: <a href="https://archlinux.org/packages/extra/x86_64/code">code</a>)</li>
+  </ul>
+</details>
+
+<br>
 
