@@ -17,7 +17,6 @@
   ],
   "modules-right": [
     "tray",
-    "hyprland/language",
     "group/audio",
     "backlight",
     "group/networking"
@@ -30,9 +29,6 @@
     "persistent-workspaces": {
       "*": 10
     }
-  },
-  "hyprland/language": {
-    "format": "Lang: {}"
   },
   "group/utils": {
     "orientation": "horizontal",
