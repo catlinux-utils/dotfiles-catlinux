@@ -16,6 +16,7 @@
     <li><a href="https://github.com/hyprwm/hypridle">hypridle</a> (Arch: <a href="https://archlinux.org/packages/extra/x86_64/hypridle">hypridle</a>)</li>
     <li><a href="https://github.com/Alexays/Waybar">waybar</a> (Arch: <a href="https://archlinux.org/packages/extra/x86_64/waybar">waybar</a>)</li>
     <li><a href="https://github.com/lbonn/rofi">rofi-wayland</a> (Arch: <a href="https://archlinux.org/packages/extra/x86_64/rofi-wayland">rofi-wayland</a>)</li>
+    <li><a href="https://github.com/romkatv/powerlevel10k#meslo-nerd-font-patched-for-powerlevel10k">MesloLGS Nerd Font patched for powerlevel10k</a> (Arch: <a href="https://aur.archlinux.org/packages/ttf-meslo-nerd-font-powerlevel10k">ttf-meslo-nerd-font-powerlevel10k</a>)</li>
     <li><a href="https://github.com/ryanoasis/nerd-fonts/">MesloLGS Nerd Font</a> (Arch: <a href="https://archlinux.org/packages/extra/any/ttf-meslo-nerd">ttf-meslo-nerd</a>)</li>
     <li>qt5-wayland qt6-wayland</li>
     <li><a href="https://sr.ht/~emersion/grim/">grim</a> (Arch: <a href="https://archlinux.org/packages/extra/x86_64/grim">grim</a>)</li>
@@ -27,7 +28,12 @@
     <li><a href="https://github.com/kovidgoyal/kitty">kitty</a> (Arch: <a href="https://archlinux.org/packages/extra/x86_64/kitty">kitty</a>)</li>
     <li><a href="https://github.com/Alex313031/thorium">thorium-browser</a> (Arch: <a href="https://aur.archlinux.org/packages/thorium-browser-bin">thorium</a>)</li>
     <li><a href="https://github.com/microsoft/vscode">vscode</a> (Arch: <a href="https://archlinux.org/packages/extra/x86_64/code">code</a>)</li>
+    <li><a href="https://github.com/romkatv/powerlevel10k">powerlevel10k</a> (Arch: <a href="https://aur.archlinux.org/packages/zsh-theme-powerlevel10k-git">powerlevel10k</a>)</li>
+    <li><a href="https://github.com/zsh-users/zsh-autosuggestions">zsh-autosuggestions</a> (AUR: <a href="https://aur.archlinux.org/packages/zsh-autosuggestions">zsh-autosuggestions</a>)</li>
+    <li><a href="https://github.com/zsh-users/zsh-syntax-highlighting">zsh-syntax-highlighting</a> (AUR: <a href="https://aur.archlinux.org/packages/zsh-syntax-highlighting-git">zsh-syntax-highlighting</a>)</li>
   </ul>
 </details>
-
 <br>
+
+
+
