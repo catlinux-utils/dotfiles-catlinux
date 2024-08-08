@@ -36,4 +36,7 @@
 <br>
 
 
+Instalation: bash -c "$(curl -s https://raw.githubusercontent.com/catlinux-utils/dotfiles-catlinux/main/setup.sh)"
+
+
 
