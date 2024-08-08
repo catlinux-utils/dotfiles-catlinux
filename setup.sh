@@ -36,7 +36,7 @@ if [ -f /etc/os-release ]; then
                 echo "No AUR helper found. Please install yay or paru."
                 exit 1
             fi
-            $AUR_HELPER -S --noconfirm $DEPENDENCIES
+            $AUR_HELPER -S --noconfirm --needed $DEPENDENCIES
         ;;
     esac
 else
@@ -51,9 +51,9 @@ if [[ ! -d "$DOTFILESDIR" ]]; then
     echo -e "${GREEN}dotfiles directory created: $DOTFILESDIR${RC}"
 fi
 
-if [[ ! -d "$DOTFILESDIR" ]]; then
-    echo -e "${YELLOW}Cloning neovim repository into: $DOTFILESDIR${RC}"
-    git clone https://github.com/catlinux-utils/dotfiles-catlinux "$DOTFILESDIR"
+if [[ ! -d "$DOTFILESDIR/git" ]]; then
+    echo -e "${YELLOW}Cloning neovim repository into: $DOTFILESDIR/git${RC}"
+    git clone https://github.com/catlinux-utils/dotfiles-catlinux "$DOTFILESDIR/git"
     if [[ $? -eq 0 ]]; then
         echo -e "${GREEN}Successfully cloned dotfiles-catlinux repository${RC}"
     else
@@ -62,13 +62,9 @@ if [[ ! -d "$DOTFILESDIR" ]]; then
     fi
 fi
 
-cd "$DOTFILESDIR"
-
-# Initial Setup file for new systems
-gitpath=$(pwd)
 
 # Backup existing neovim config and install new one
-mkdir -p "$DOTFILESDIR/backup/.config/[kitty,hypr,waybar,rofi]"
+mkdir -p "$DOTFILESDIR/backup/.config/"
 [ -d ~/.config/hypr ] && cp -r ~/.config/hypr "$DOTFILESDIR/backup/.config/hypr"
 [ -d ~/.config/kitty ] && cp -r ~/.config/kitty "$DOTFILESDIR/backup/.config/kitty"
 [ -d ~/.config/rofi ] && cp -r ~/.config/rofi "$DOTFILESDIR/backup/.config/rofi"
@@ -76,5 +72,6 @@ mkdir -p "$DOTFILESDIR/backup/.config/[kitty,hypr,waybar,rofi]"
 [ -f ~/.zshrc ] && cp ~/.zshrc "$DOTFILESDIR/backup/.zshrc"
 rm -rf ~/.config/hypr ~/.config/kitty ~/.config/rofi ~/.config/waybar
 
+cd $DOTFILESDIR/git
 bash install.sh
 
