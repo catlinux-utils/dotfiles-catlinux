@@ -36,7 +36,7 @@ if [ -f /etc/os-release ]; then
                 echo "No AUR helper found. Please install yay or paru."
                 exit 1
             fi
-            sudo $AUR_HELPER -S --noconfirm $DEPENDENCIES
+            $AUR_HELPER -S --noconfirm $DEPENDENCIES
         ;;
     esac
 else
@@ -68,7 +68,7 @@ cd "$DOTFILESDIR"
 gitpath=$(pwd)
 
 # Backup existing neovim config and install new one
-mkdir -p "$DOTFILESDIR/backup"
+mkdir -p "$DOTFILESDIR/backup/.config/[kitty,hypr,waybar,rofi]"
 [ -d ~/.config/hypr ] && cp -r ~/.config/hypr "$DOTFILESDIR/backup/.config/hypr"
 [ -d ~/.config/kitty ] && cp -r ~/.config/kitty "$DOTFILESDIR/backup/.config/kitty"
 [ -d ~/.config/rofi ] && cp -r ~/.config/rofi "$DOTFILESDIR/backup/.config/rofi"
