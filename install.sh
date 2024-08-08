@@ -1,6 +1,5 @@
 #!/bin/bash
 
-cp .config $HOME/ -r
-cp .local $HOME/ -r
+cp config/* $HOME/
 
 bash reload-waybar.sh

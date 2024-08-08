@@ -8,8 +8,38 @@ RED='\e[31m'
 YELLOW='\e[33m'
 GREEN='\e[32m'
 
-# Check if the home directory and linuxtoolbox folder exist, create them if they don't
 DOTFILESDIR="$HOME/dotfiles-catlinux"
+
+if [ -f /etc/os-release ]; then
+    . /etc/os-release
+    
+    case "${ID_LIKE:-$ID}" in
+        arch|manjaro)
+        DEPENDENCIES="hyprland swww hyprlock hypridle waybar rofi-wayland ttf-meslo-nerd-font-powerlevel10k ttf-meslo-nerd qt5-wayland qt6-wayland grim slurp wl-clipboard gnome-keyring polkit-kde-agent network-manager-applet kitty thorium-browser vscode zsh-theme-powerlevel10k-git zsh-autosuggestions zsh-syntax-highlighting"
+            if ! command_exists yay && ! command_exists paru; then
+                echo "Installing yay as AUR helper..."
+                sudo pacman --noconfirm -S base-devel
+                cd /tmp && git clone https://aur.archlinux.org/yay-bin.git
+                cd yay-bin && makepkg --noconfirm -si
+            else
+                echo "AUR helper already installed"
+            fi
+            if command_exists yay; then
+                AUR_HELPER="yay"
+                elif command_exists paru; then
+                AUR_HELPER="paru"
+            else
+                echo "No AUR helper found. Please install yay or paru."
+                exit 1
+            fi
+            sudo $AUR_HELPER -S --noconfirm $DEPENDENCIES
+        ;;
+    esac
+else
+    echo -e "${RED}Unable to determine OS. Please install required packages manually.${RC}"
+fi
+
+cd $HOME
 
 if [[ ! -d "$DOTFILESDIR" ]]; then
     echo -e "${YELLOW}Creating dotfiles directory: $DOTFILESDIR${RC}"
@@ -17,62 +47,30 @@ if [[ ! -d "$DOTFILESDIR" ]]; then
     echo -e "${GREEN}dotfiles directory created: $DOTFILESDIR${RC}"
 fi
 
-if [[ ! -d "$DOTFILESDIR/neovim" ]]; then
-    echo -e "${YELLOW}Cloning neovim repository into: $DOTFILESDIR/neovim${RC}"
-    git clone https://github.com/ChrisTitusTech/dotfiles-catlinux "$DOTFILESDIR/neovim"
+if [[ ! -d "$DOTFILESDIR" ]]; then
+    echo -e "${YELLOW}Cloning neovim repository into: $DOTFILESDIR${RC}"
+    git clone https://github.com/catlinux-utils/dotfiles-catlinux "$DOTFILESDIR"
     if [[ $? -eq 0 ]]; then
-        echo -e "${GREEN}Successfully cloned neovim repository${RC}"
+        echo -e "${GREEN}Successfully cloned dotfiles-catlinux repository${RC}"
     else
-        echo -e "${RED}Failed to clone neovim repository${RC}"
+        echo -e "${RED}Failed to clone dotfiles-catlinux repository${RC}"
         exit 1
     fi
 fi
 
-cd "$LINUXTOOLBOXDIR/neovim"
+cd "$DOTFILESDIR"
 
 # Initial Setup file for new systems
 gitpath=$(pwd)
 
 # Backup existing neovim config and install new one
-mkdir -p "$LINUXTOOLBOXDIR/backup/nvim"
-[ -d ~/.config/nvim ] && cp -r ~/.config/nvim "$LINUXTOOLBOXDIR/backup/nvim/config"
-[ -d ~/.local/share/nvim ] && cp -r ~/.local/share/nvim "$LINUXTOOLBOXDIR/backup/nvim/local_share"
-[ -d ~/.cache/nvim ] && cp -r ~/.cache/nvim "$LINUXTOOLBOXDIR/backup/nvim/cache"
-rm -rf ~/.config/nvim ~/.local/share/nvim ~/.cache/nvim
+mkdir -p "$DOTFILESDIR/backup"
+[ -d ~/.config/hypr ] && cp -r ~/.config/hypr "$DOTFILESDIR/backup/.config/hypr"
+[ -d ~/.config/kitty ] && cp -r ~/.config/kitty "$DOTFILESDIR/backup/.config/kitty"
+[ -d ~/.config/rofi ] && cp -r ~/.config/rofi "$DOTFILESDIR/backup/.config/rofi"
+[ -d ~/.config/waybar ] && cp -r ~/.config/waybar "$DOTFILESDIR/backup/.config/waybar"
+[ -f ~/.zshrc ] && cp ~/.zshrc "$DOTFILESDIR/backup/.zshrc"
+rm -rf ~/.config/hypr ~/.config/kitty ~/.config/rofi ~/.config/waybar
 
-# Setup Neovim config and link to linuxtoolbox
-mkdir -p "$HOME/.vim/undodir"
-mkdir -p "$HOME/.scripts"
-ln -s "$gitpath/titus-kickstart" "$HOME/.config/nvim"
+bash install.sh
 
-# Share system clipboard with unnamedplus
-if [ -f /etc/os-release ]; then
-    . /etc/os-release
-    # Determine if Wayland or Xorg is being used
-    if [[ $XDG_SESSION_TYPE == "wayland" ]]; then
-        CLIPBOARD_PKG="wl-clipboard"
-    else
-        CLIPBOARD_PKG="xclip"
-    fi
-
-    case "${ID_LIKE:-$ID}" in
-        debian|ubuntu)
-            sudo apt install ripgrep fd-find $CLIPBOARD_PKG python3-venv luarocks golang-go shellcheck -y
-            ;;
-        fedora)
-            sudo dnf install ripgrep fzf $CLIPBOARD_PKG neovim python3-virtualenv luarocks golang ShellCheck -y
-            ;;
-        arch|manjaro)
-            sudo pacman -S ripgrep fzf $CLIPBOARD_PKG neovim python-virtualenv luarocks go shellcheck --noconfirm
-            ;;
-        opensuse)
-            sudo zypper install ripgrep fzf $CLIPBOARD_PKG neovim python3-virtualenv luarocks go ShellCheck -y
-            ;;
-        *)
-            echo -e "${YELLOW}Unsupported OS. Please install the following packages manually:${RC}"
-            echo "ripgrep, fzf, $CLIPBOARD_PKG, neovim, python3-virtualenv (or equivalent), luarocks, go, shellcheck"
-            ;;
-    esac
-else
-    echo -e "${RED}Unable to determine OS. Please install required packages manually.${RC}"
-fi
