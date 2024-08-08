@@ -1,0 +1,18 @@
+pkgname=dotfiles-catlinux
+pkgver=1
+pkgrel=2
+pkgdesc="Dotfiles for CatLinux"
+arch=('any')
+url="https://github.com/catlinux-utils/dotfiles-catlinux"
+license=('GPL')
+depends=('hyprland' 'swww' 'hyprlock' 'hypridle' 'waybar' 'rofi' 'rofi-wayland' 'ttf-meslo-nerd-font-powerlevel10k' 'ttf-meslo-nerd' 'qt5-wayland' 'qt6-wayland' 'grim' 'slurp' 'wl-clipboard' 'gnome-keyring' 'polkit-kde-agent' 'network-manager-applet' 'kitty'  'vscode')
+depends_opt=('powerlevel10k' 'thorium-browser-bin' 'zsh-theme-powerlevel10k' 'zsh-autosuggestions' 'zsh-syntax-highlighting')
+makedepends=('git')
+source=("$pkgname::git+$url.git")
+md5sums=('SKIP') 
+
+package() {
+    install -dm755 "$pkgdir/etc/skel/"
+    cp -r "$srcdir/$pkgname/config/." "$pkgdir/etc/skel/"
+}
+

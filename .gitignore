@@ -1,0 +1,4 @@
+PKG/pkg
+PKG/src
+PKG/dotfiles-catlinux
+PKG/*.pkg.*
