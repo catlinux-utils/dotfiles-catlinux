@@ -22,7 +22,7 @@ if [ -f /etc/os-release ]; then
             DEPENDENCIES="hyprland swww hyprlock hypridle waybar rofi-wayland ttf-meslo-nerd-font-powerlevel10k ttf-meslo-nerd qt5-wayland qt6-wayland grim slurp wl-clipboard gnome-keyring polkit-kde-agent network-manager-applet kitty thorium-browser vscode zsh-theme-powerlevel10k-git zsh-autosuggestions zsh-syntax-highlighting"
             if ! command_exists yay && ! command_exists paru; then
                 echo "Installing yay as AUR helper..."
-                sudo pacman --noconfirm -S base-devel
+                sudo pacman --noconfirm -S base-devel git
                 cd /tmp && git clone https://aur.archlinux.org/yay-bin.git
                 cd yay-bin && makepkg --noconfirm -si
             else
