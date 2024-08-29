@@ -19,7 +19,7 @@ if [ -f /etc/os-release ]; then
     
     case "${ID_LIKE:-$ID}" in
         arch|manjaro)
-            DEPENDENCIES="hyprland swww hyprlock hypridle waybar rofi-wayland ttf-meslo-nerd-font-powerlevel10k ttf-meslo-nerd qt5-wayland qt6-wayland grim slurp wl-clipboard gnome-keyring polkit-gnome network-manager-applet kitty thorium-browser-bin vscode zsh-theme-powerlevel10k-git zsh-autosuggestions zsh-syntax-highlighting"
+            DEPENDENCIES="hyprland swww hyprlock hypridle waybar rofi-wayland ttf-meslo-nerd-font-powerlevel10k ttf-meslo-nerd qt5-wayland qt6-wayland grim slurp wl-clipboard gnome-keyring polkit-gnome network-manager-applet kitty thorium-browser-bin vscode zsh-theme-powerlevel10k-git zsh-autosuggestions zsh-syntax-highlighting xorg-xhost"
             if ! command_exists yay && ! command_exists paru; then
                 echo "Installing yay as AUR helper..."
                 sudo pacman --noconfirm -S base-devel git
