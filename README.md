@@ -23,7 +23,7 @@
     <li><a href="https://github.com/emersion/slurp">slurp</a> (Arch: <a href="https://archlinux.org/packages/extra/x86_64/slurp">slurp</a>)</li>
     <li><a href="https://github.com/bugaevc/wl-clipboard">wl-clipboard</a> (Arch: <a href="https://archlinux.org/packages/extra/x86_64/wl-clipboard">wl-clipboard</a>)</li>
     <li><a href="https://gitlab.gnome.org/GNOME/gnome-keyring">gnome-keyring-daemon</a> (Arch: <a href="https://archlinux.org/packages/extra/x86_64/gnome-keyring">gnome-keyring</a>)</li>
-    <li><a href="https://invent.kde.org/plasma/polkit-kde-agent-1">polkit-kde-agent</a> (Arch: <a href="https://archlinux.org/packages/extra/x86_64/polkit-kde-agent">polkit-kde-agent</a>)</li>
+    <li><a href="https://gitlab.gnome.org/Archive/policykit-gnome">polkit-gnome</a> (Arch: <a href="https://archlinux.org/packages/extra/x86_64/polkit-gnome">polkit-gnome</a>)</li>
     <li><a href="https://gitlab.gnome.org/GNOME/network-manager-applet">network-manager-applet</a> (Arch: <a href="https://archlinux.org/packages/extra/x86_64/network-manager-applet">network-manager-applet</a>)</li>
     <li><a href="https://github.com/kovidgoyal/kitty">kitty</a> (Arch: <a href="https://archlinux.org/packages/extra/x86_64/kitty">kitty</a>)</li>
     <li><a href="https://github.com/Alex313031/thorium">thorium-browser</a> (Arch: <a href="https://aur.archlinux.org/packages/thorium-browser-bin">thorium</a>)</li>
