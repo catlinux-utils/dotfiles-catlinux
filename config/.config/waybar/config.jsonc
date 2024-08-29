@@ -11,6 +11,7 @@
   "modules-right": [
     "group/utils",
     "group/monitoring",
+    "backlight",
     "battery",
     "group/audio",
     "group/networking",
