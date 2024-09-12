@@ -3,6 +3,7 @@
   font-family: "Noto Sans CJK KR Regular";
   font-size: 13px;
   min-height: 0;
+  /*all: initial;*/
 }
 
 window#waybar {
@@ -45,7 +46,7 @@ button {
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5);
 }
 #workspaces button {
-  padding: 0 8px;
+  padding: 0 3px;
   background-color: transparent;
   border-radius: 26px;
   color: rgb(255, 255, 255)

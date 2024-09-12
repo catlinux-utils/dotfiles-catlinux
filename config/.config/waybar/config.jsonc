@@ -24,7 +24,7 @@
     "on-scroll-up": "hyprctl dispatch workspace -1",
     "on-scroll-down": "hyprctl dispatch workspace +1",
     "persistent-workspaces": {
-      "*": 15
+      "*": 9
     }
   },
   "group/utils": {
