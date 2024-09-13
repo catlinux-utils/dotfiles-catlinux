@@ -2,4 +2,4 @@
 
 cp -r config/. $HOME/
 
-bash reload-waybar.sh
+ags -q && ags &

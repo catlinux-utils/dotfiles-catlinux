@@ -1,40 +1,87 @@
+* {
+  font-size: 13px;
+  min-height: 0;
+}
+
 window.bar {
-    background-color: @theme_bg_color;
-    color: @theme_fg_color;
+  color: #ffffff;
+  min-height: 10px;
 }
 
 button {
-    min-width: 0;
-    padding-top: 0;
-    padding-bottom: 0;
-    background-color: transparent;
+  min-width: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  background-color: transparent;
+  min-height: 10px;
 }
-
+/*
 button:active {
-    background-color: @theme_selected_bg_color;
+  background-color: @theme_selected_bg_color;
 }
 
 button:hover {
-    border-bottom: 3px solid @theme_fg_color;
-}
+}*/
 
 label {
-    font-weight: bold;
+  font-weight: bold;
+  min-height: 10px;
+}
+
+.clock,
+.battery,
+.tray {
+  margin: 2px;
+  padding-left: 4px;
+  padding-right: 4px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  color: #ffffff;
+}
+
+
+.workspaces {
+  margin: 2px;
+  padding-left: 4px;
+  padding-right: 4px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  color: #ffffff;
+}
+.workspaces button {
+  padding: 0 6px;
+  background-color: transparent;
+  border-radius: 26px;
+  color: rgb(255, 255, 255);
 }
 
 .workspaces button.focused {
-    border-bottom: 3px solid @theme_selected_bg_color;
+  background-color: rgba(255, 255, 255, 0.187);
+}
+.workspaces button:hover {
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5);
+}
+.workspaces button.empty{
+  color: rgb(101, 101, 101)
+}
+
+.tray-item {
+  padding: 0 2px;
+  background-color: transparent;
+  border-radius: 26px;
+  color: rgb(255, 255, 255);
 }
 
 .client-title {
-    color: @theme_selected_bg_color;
+  margin: 2px;
+  padding-left: 8px;
+  padding-right: 8px;
+  background-color: rgba(0, 0, 0, 0.3);
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 26px;
 }
 
 .notification {
-    color: yellow;
-}
-
-levelbar block,
-highlight {
-    min-height: 10px;
+  color: yellow;
 }
