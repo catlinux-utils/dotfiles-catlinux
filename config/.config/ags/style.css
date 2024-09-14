@@ -22,31 +22,23 @@ button:active {
 
 button:hover {
 }*/
-
+.def_box{
+  margin: 2px;
+  padding-left: 4px;
+  padding-right: 4px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  color: #ffffff;
+}
+.def_item{
+  padding: 0 2px;
+  background-color: transparent;
+  border-radius: 26px;
+  color: rgb(255, 255, 255);
+}
 label {
   font-weight: bold;
   min-height: 10px;
-}
-
-.clock,
-.battery,
-.tray {
-  margin: 2px;
-  padding-left: 4px;
-  padding-right: 4px;
-  background-color: rgba(0, 0, 0, 0.3);
-  border-radius: 5px;
-  color: #ffffff;
-}
-
-
-.workspaces {
-  margin: 2px;
-  padding-left: 4px;
-  padding-right: 4px;
-  background-color: rgba(0, 0, 0, 0.3);
-  border-radius: 5px;
-  color: #ffffff;
 }
 .workspaces button {
   padding: 0 6px;

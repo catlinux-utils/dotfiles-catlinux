@@ -20,7 +20,7 @@ function Workspaces() {
     onScrollUp: () => hyprland.messageAsync(`dispatch workspace -1`),
     onScrollDown: () => hyprland.messageAsync(`dispatch workspace +1`),
     child: Widget.Box({
-      class_name: "workspaces",
+      class_name: "workspaces def_box",
       children: Array.from({ length: 20 }, (_, i) => i + 1).map((i) =>
         Widget.Button({
           attribute: i,
@@ -64,7 +64,7 @@ function ClientTitle() {
 
 function Clock() {
   return Widget.Label({
-    class_name: "clock",
+    class_name: "clock def_box",
     label: date.bind(),
   });
 }
@@ -152,7 +152,7 @@ function BatteryLabel() {
     .as((p) => `battery-level-${Math.floor(p / 10) * 10}-symbolic`);
 
   return Widget.Box({
-    class_name: "battery",
+    class_name: "battery def_box",
     visible: battery.bind("available"),
     children: [
       Widget.Label({
@@ -168,7 +168,7 @@ function SysTray() {
   const items = systemtray.bind("items").as((items) =>
     items.map((item) =>
       Widget.Button({
-        class_name: "tray-item",
+        class_name: "tray-item def_item",
         child: Widget.Icon({ icon: item.bind("icon") }),
         on_primary_click: (_, event) => item.activate(event),
         on_secondary_click: (_, event) => item.openMenu(event),
@@ -178,8 +178,24 @@ function SysTray() {
   );
 
   return Widget.Box({
-    class_name: "tray",
+    class_name: "tray def_box",
     children: items,
+  });
+}
+
+function ToolBox() {
+  return Widget.Box({
+    class_name: "tool-box def_box",
+    children: [
+      Widget.Button({
+        on_primary_click: () =>
+          Utils.execAsync(['bash','-c','grim -g "$(slurp -d)" - | wl-copy'])
+            .then((out) => print(out))
+            .catch((err) => print(err)),
+        child: Widget.Icon("applets-screenshooter-symbolic"),
+        class_name:"def_item",
+      }),
+    ],
   });
 }
 
@@ -192,9 +208,11 @@ function Left() {
 }
 
 function Center() {
-  return Widget.Box({
+  return Widget.CenterBox({
     spacing: 8,
-    children: [Media(), Notification(), ClientTitle()],
+    startWidget: Media(),
+    centerWidget: ClientTitle(),
+    //endWidget: ToolBox(),
   });
 }
 
@@ -203,6 +221,8 @@ function Right() {
     hpack: "end",
     spacing: 8,
     children: [
+      Notification(),
+      ToolBox(),
       //Volume(),
       SysTray(),
       BatteryLabel(),
@@ -225,6 +245,7 @@ function Bar(monitor = 0) {
     }),
   });
 }
+App.addIcons(`/usr/share/icons/breeze-dark/devices/22/`);
 
 App.config({
   style: "./style.css",
