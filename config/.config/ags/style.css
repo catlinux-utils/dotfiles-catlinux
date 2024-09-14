@@ -52,7 +52,7 @@ label {
   padding: 0 6px;
   background-color: transparent;
   border-radius: 26px;
-  color: rgb(255, 255, 255);
+  color: rgb(101, 101, 101)
 }
 
 .workspaces button.focused {
@@ -61,8 +61,8 @@ label {
 .workspaces button:hover {
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5);
 }
-.workspaces button.empty{
-  color: rgb(101, 101, 101)
+.workspaces button.occupied{
+  color: rgb(255, 255, 255);
 }
 
 .tray-item {

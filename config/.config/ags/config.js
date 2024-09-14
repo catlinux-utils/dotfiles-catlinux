@@ -26,13 +26,17 @@ function Workspaces() {
           attribute: i,
           label: `${i}`,
           onClicked: () => hyprland.messageAsync(`dispatch workspace ${i}`),
-          class_name: activeId.as((a) =>
-            hyprland.workspaces.some((ws) => ws.id === i)
-              ? a === i
-                ? "focused"
-                : ""
-              : "empty"
-          ),
+          setup: (self) =>
+            self.hook(hyprland, () => {
+              self.toggleClassName(
+                "focused",
+                hyprland.active.workspace.id === i
+              );
+              self.toggleClassName(
+                "occupied",
+                (hyprland.getWorkspace(i)?.windows || 0) > 0
+              );
+            }),
         })
       ),
 
@@ -164,7 +168,7 @@ function SysTray() {
   const items = systemtray.bind("items").as((items) =>
     items.map((item) =>
       Widget.Button({
-        class_name:"tray-item",
+        class_name: "tray-item",
         child: Widget.Icon({ icon: item.bind("icon") }),
         on_primary_click: (_, event) => item.activate(event),
         on_secondary_click: (_, event) => item.openMenu(event),
