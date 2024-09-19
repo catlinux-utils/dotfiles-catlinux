@@ -1,5 +1,6 @@
 if [ "$TERM" != "linux" ]; then
-  eval "$(oh-my-posh init zsh --config '/usr/share/oh-my-posh/themes/tokyo.omp.json')"
+  #eval "$(oh-my-posh init zsh --config '/usr/share/oh-my-posh/themes/tokyo.omp.json')"
+  eval "$(oh-my-posh init zsh --config '~/.config/ohmyposh/catlinux.json')"
 fi
 
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
