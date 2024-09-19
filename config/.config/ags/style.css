@@ -38,7 +38,7 @@ button:hover {
 }
 
 .def_item_enabled{
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.187);
 }
 label {
   font-weight: bold;
