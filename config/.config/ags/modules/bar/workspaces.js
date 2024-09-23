@@ -4,12 +4,12 @@ function Workspaces() {
   return Widget.EventBox({
     onScrollUp: () => hyprland.messageAsync(`dispatch workspace -1`),
     onScrollDown: () =>
-      hyprland.active.workspace.id < 99
+      hyprland.active.workspace.id < 20
         ? hyprland.messageAsync(`dispatch workspace +1`)
         : "",
     child: Widget.Box({
       class_name: "workspaces def_box",
-      children: Array.from({ length: 99 }, (_, i) => i + 1).map((workspaceId) =>
+      children: Array.from({ length: 20 }, (_, i) => i + 1).map((workspaceId) =>
         Widget.Button({
           attribute: workspaceId,
           label: `${workspaceId}`,
