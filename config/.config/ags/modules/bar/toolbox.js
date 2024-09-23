@@ -4,7 +4,7 @@ function ToolBox() {
     children: [
       Widget.Button({
         on_primary_click: () =>
-          Utils.execAsync(["bash", "-c", 'grim -g "$(slurp -d)" - | wl-copy'])
+          Utils.execAsync(["bash", "-c", "hyprshot -m region -z"])
             .then((out) => print(out))
             .catch((err) => print(err)),
         child: Widget.Icon("applets-screenshooter-symbolic"),

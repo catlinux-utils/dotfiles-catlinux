@@ -19,8 +19,7 @@
     <li><a href="https://github.com/romkatv/powerlevel10k#meslo-nerd-font-patched-for-powerlevel10k">MesloLGS Nerd Font patched for powerlevel10k</a> (Arch: <a href="https://aur.archlinux.org/packages/ttf-meslo-nerd-font-powerlevel10k">ttf-meslo-nerd-font-powerlevel10k</a>)</li>
     <li><a href="https://github.com/ryanoasis/nerd-fonts/">MesloLGS Nerd Font</a> (Arch: <a href="https://archlinux.org/packages/extra/any/ttf-meslo-nerd">ttf-meslo-nerd</a>)</li>
     <li>qt5-wayland qt6-wayland</li>
-    <li><a href="https://sr.ht/~emersion/grim/">grim</a> (Arch: <a href="https://archlinux.org/packages/extra/x86_64/grim">grim</a>)</li>
-    <li><a href="https://github.com/emersion/slurp">slurp</a> (Arch: <a href="https://archlinux.org/packages/extra/x86_64/slurp">slurp</a>)</li>
+    <li><a href="https://github.com/Gustash/Hyprshot">hyprshot</a> (Arch: <a href="https://aur.archlinux.org/packages/hyprshot">hyprshot</a>)</li>
     <li><a href="https://github.com/bugaevc/wl-clipboard">wl-clipboard</a> (Arch: <a href="https://archlinux.org/packages/extra/x86_64/wl-clipboard">wl-clipboard</a>)</li>
     <li><a href="https://gitlab.gnome.org/GNOME/gnome-keyring">gnome-keyring-daemon</a> (Arch: <a href="https://archlinux.org/packages/extra/x86_64/gnome-keyring">gnome-keyring</a>)</li>
     <li><a href="https://gitlab.gnome.org/Archive/policykit-gnome">polkit-gnome</a> (Arch: <a href="https://archlinux.org/packages/extra/x86_64/polkit-gnome">polkit-gnome</a>)</li>
@@ -35,8 +34,4 @@
 </details>
 <br>
 
-
-Instalation: bash -c "$(curl -s https://raw.githubusercontent.com/catlinux-utils/dotfiles-catlinux/main/setup.sh)"
-
-
-
+Instalation: `bash -c "$(curl -s https://raw.githubusercontent.com/catlinux-utils/dotfiles-catlinux/main/setup.sh)"`
