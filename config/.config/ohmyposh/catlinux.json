@@ -19,7 +19,7 @@
         {
           "foreground": "#be9ddf",
           "style": "diamond",
-          "template": "[<#ffffff>\ue266</> RAM: {{ (div ((sub .PhysicalTotalMemory .PhysicalFreeMemory)|float64) 1073741824.0) }}/{{ (div .PhysicalTotalMemory 1073741824.0) }}GB]",
+          "template": "[\ue266 RAM: {{ (div ((sub .PhysicalTotalMemory .PhysicalFreeMemory)|float64) 1073741824.0) }}/{{ (div .PhysicalTotalMemory 1073741824.0) }}GB]",
           "type": "sysinfo"
         },
         {
@@ -31,7 +31,7 @@
             "fetch_upstream_icon": true
           },
           "style": "plain",
-          "template": "[<#ffffff>{{ .UpstreamIcon }}</>{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} <#ffffff>\uf044</> {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} <#ffffff>\uf046</> {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} <#ffffff>\ueb4b</> {{ .StashCount }}{{ end }}]",
+          "template": "[<#ffffff>{{ .UpstreamIcon }}</>{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} <#ffffff>\uf046</> {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} <#ffffff>\ueb4b</> {{ .StashCount }}{{ end }}]",
           "type": "git"
         },
         {
@@ -40,7 +40,7 @@
             "time_format": "15:04:05"
           },
           "style": "diamond",
-          "template": "[<#ffffff>\uf073</> {{ .CurrentDate | date .Format }}]",
+          "template": "[\uf073 {{ .CurrentDate | date .Format }}]",
           "type": "time"
         },
         {
@@ -50,7 +50,7 @@
             "threshold": 0
           },
           "style": "diamond",
-          "template": "[<#ffffff>\uf252</> {{ .FormattedMs }}s]",
+          "template": "[\uf252 {{ .FormattedMs }}s]",
           "type": "executiontime"
         }
       ],
