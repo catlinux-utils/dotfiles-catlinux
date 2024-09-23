@@ -5,6 +5,7 @@ import { ToolBox } from "./bar/toolbox.js";
 import { Clock } from "./bar/clock.js";
 import { SysTray } from "./bar/sys-tray.js";
 import { BatteryLabel } from "./bar/battery-label.js";
+import { Monitoring } from "./bar/monitoring.js";
 
 function Left() {
   return Widget.Box({
@@ -28,6 +29,7 @@ function Right() {
     spacing: 8,
     children: [
       Notification(),
+      Monitoring(),
       ToolBox(),
       //Volume(),
       SysTray(),
