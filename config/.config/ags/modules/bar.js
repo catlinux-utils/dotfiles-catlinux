@@ -10,16 +10,16 @@ import { Monitoring } from "./bar/monitoring.js";
 function Left() {
   return Widget.Box({
     spacing: 8,
-    children: [Workspaces()],
+    children: [Workspaces(), Monitoring()],
   });
 }
 
 function Center() {
   return Widget.CenterBox({
     spacing: 8,
-    //startWidget: Media(),
+    //startWidget:
     centerWidget: ClientTitle(),
-    //endWidget: ToolBox(),
+    //endWidget:
   });
 }
 
@@ -27,21 +27,13 @@ function Right() {
   return Widget.Box({
     hpack: "end",
     spacing: 8,
-    children: [
-      Notification(),
-      Monitoring(),
-      ToolBox(),
-      //Volume(),
-      SysTray(),
-      BatteryLabel(),
-      Clock(),
-    ],
+    children: [Notification(), ToolBox(), SysTray(), BatteryLabel(), Clock()],
   });
 }
 
 function Bar(monitor = 0) {
   return Widget.Window({
-    name: `bar-${monitor}`, // name has to be unique
+    name: `bar-${monitor}`,
     class_name: "bar",
     monitor,
     anchor: ["top", "left", "right"],

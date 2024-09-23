@@ -10,7 +10,7 @@ function BatteryLabel() {
     visible: battery.bind("available"),
     children: [
       Widget.Label({
-        label: battery.bind("percent").as((p) => `${p}%`),
+        label: battery.bind("percent").as((percent) => `${percent}%`),
         maxWidthChars: 4,
       }),
       Widget.Icon({ icon }),
