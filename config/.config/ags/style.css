@@ -15,14 +15,7 @@ button {
   background-color: transparent;
   min-height: 10px;
 }
-/*
-button:active {
-  background-color: @theme_selected_bg_color;
-}
-
-button:hover {
-}*/
-.def_box{
+.def_box {
   margin: 2px;
   padding-left: 4px;
   padding-right: 4px;
@@ -30,14 +23,14 @@ button:hover {
   border-radius: 5px;
   color: #ffffff;
 }
-.def_item{
+.def_item {
   padding: 0 2px;
   background-color: transparent;
   border-radius: 26px;
   color: rgb(255, 255, 255);
 }
 
-.def_item_enabled{
+.def_item_enabled {
   background-color: rgba(255, 255, 255, 0.187);
 }
 label {
@@ -48,7 +41,7 @@ label {
   padding: 0 6px;
   background-color: transparent;
   border-radius: 26px;
-  color: rgb(101, 101, 101)
+  color: rgb(101, 101, 101);
 }
 
 .workspaces button.focused {
@@ -57,7 +50,7 @@ label {
 .workspaces button:hover {
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5);
 }
-.workspaces button.occupied{
+.workspaces button.occupied {
   color: rgb(255, 255, 255);
 }
 
