@@ -1,6 +1,6 @@
 if [ "$TERM" != "linux" ]; then
-  #eval "$(oh-my-posh init zsh --config '/usr/share/oh-my-posh/themes/tokyo.omp.json')"
-  eval "$(oh-my-posh init zsh --config '~/.config/ohmyposh/catlinux.json')"
+    #eval "$(oh-my-posh init zsh --config '/usr/share/oh-my-posh/themes/tokyo.omp.json')"
+    eval "$(oh-my-posh init zsh --config '~/.config/ohmyposh/catlinux.json')"
 fi
 
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -24,6 +24,11 @@ setopt hist_find_no_dups
 # Completion styling
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' menu yes
+
+bindkey  "^[[H"   beginning-of-line
+bindkey  "^[[F"   end-of-line
+bindkey  "^[[3~"  delete-char
+
 
 alias ls='lsd'
 alias l='ls -l'
