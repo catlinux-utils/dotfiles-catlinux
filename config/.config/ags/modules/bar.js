@@ -10,7 +10,7 @@ import { Monitoring } from "./bar/monitoring.js";
 function Left() {
   return Widget.Box({
     spacing: 8,
-    children: [Workspaces(), Monitoring()],
+    children: [Workspaces()],
   });
 }
 
