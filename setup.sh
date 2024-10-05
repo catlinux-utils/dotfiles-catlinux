@@ -10,7 +10,7 @@ GREEN='\e[32m'
 
 DOTFILESDIR="$HOME/dotfiles-catlinux"
 
-HYPR="hyprland hyprlock hypridle hyprshot xdg-desktop-portal-hyprland qt5-wayland qt6-wayland qt6ct kvantum"
+HYPR="hyprland hyprlock hypridle hyprshot xdg-desktop-portal-hyprland xdg-desktop-portal-gtk qt5-wayland qt6-wayland qt6ct kvantum"
 UTILS="swww rofi-wayland wl-clipboard gnome-keyring polkit-gnome network-manager-applet xorg-xhost aylurs-gtk-shell"
 APPS="kitty thorium-browser-bin vscode"
 TERMINAL="ttf-meslo-nerd zsh oh-my-posh zsh-autosuggestions zsh-syntax-highlighting"
