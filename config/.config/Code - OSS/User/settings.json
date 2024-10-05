@@ -1,0 +1,10 @@
+{
+  "window.customTitleBarVisibility": "auto",
+  "window.titleBarStyle": "custom",
+  "workbench.activityBar.location": "top",
+  "terminal.integrated.fontFamily": "MesloLGS Nerd Font",
+  "telemetry.telemetryLevel": "error",
+  "explorer.confirmDragAndDrop": false,
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true
+}
