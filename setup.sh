@@ -10,13 +10,20 @@ GREEN='\e[32m'
 
 DOTFILESDIR="$HOME/dotfiles-catlinux"
 
-ARCH_DEPENDENCIES="hyprland swww hyprlock hypridle waybar rofi-wayland ttf-meslo-nerd-font-powerlevel10k ttf-meslo-nerd qt5-wayland qt6-wayland grim slurp wl-clipboard gnome-keyring polkit-gnome network-manager-applet kitty thorium-browser-bin vscode zsh-theme-powerlevel10k-git zsh-autosuggestions zsh-syntax-highlighting xorg-xhost aylurs-gtk-shell hyprshot"
+HYPR="hyprland hyprlock hypridle hyprshot xdg-desktop-portal-hyprland qt5-wayland qt6-wayland qt6ct kvantum"
+UTILS="swww rofi-wayland wl-clipboard gnome-keyring polkit-gnome network-manager-applet xorg-xhost aylurs-gtk-shell"
+APPS="kitty thorium-browser-bin vscode"
+TERMINAL="ttf-meslo-nerd zsh oh-my-posh zsh-autosuggestions zsh-syntax-highlighting"
+
+ARCH_DEPENDENCIES="${HYPR} ${UTILS} ${APPS} ${TERMINAL}" 
+
+
 
 command_exists() {
     command -v "$1" >/dev/null 2>&1
 }
 
-if [ -f /etc/os-release ]; then
+if [ -f /etc/os-release ]; then  
     . /etc/os-release
     
     case "${ID_LIKE:-$ID}" in
@@ -37,6 +44,7 @@ if [ -f /etc/os-release ]; then
                 echo "No AUR helper found. Please install yay or paru."
                 exit 1
             fi
+            echo "Installing "
             $AUR_HELPER -S --noconfirm --needed $ARCH_DEPENDENCIES
         ;;
     esac
