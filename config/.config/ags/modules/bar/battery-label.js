@@ -3,7 +3,7 @@ const battery = await Service.import("battery");
 function BatteryLabel() {
   const icon = battery
     .bind("percent")
-    .as((p) => `battery-level-${!battery.bind("available")?Math.floor(p / 10) * 10:"0"}-symbolic`);
+    .as((p) => `battery-level-${Math.floor(p / 10) * 10}-symbolic`);
 
   return Widget.Box({
     class_name: "battery def_box",
