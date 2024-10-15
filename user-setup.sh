@@ -83,7 +83,7 @@ mkdir -p "$DOTFILESDIR/backup/.config/"
 [ -f ~/.zshrc ] && cp ~/.zshrc "$DOTFILESDIR/backup/.zshrc"
 rm -rf ~/.config/hypr ~/.config/kitty ~/.config/rofi ~/.config/waybar
 
-gsettings set org.gnome.desktop.interface gtk-theme Adwaita
+gsettings set org.gnome.desktop.interface gtk-theme adw-gtk3-dark
 
 cd $DOTFILESDIR
 bash install.sh
