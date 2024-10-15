@@ -70,6 +70,7 @@ if [[ ! -d "$DOTFILESDIR/.git" ]]; then
         exit 1
     fi
 else
+    cd "$DOTFILESDIR"
     git pull
 fi
 
