@@ -13,7 +13,7 @@ DOTFILESDIR="$HOME/dotfiles-catlinux"
 HYPR="hyprland hyprlock hypridle hyprshot xdg-desktop-portal-hyprland xdg-desktop-portal-gtk qt5-wayland qt6-wayland qt6ct-kde kvantum"
 UTILS="swww rofi-wayland wl-clipboard gnome-keyring polkit-gnome network-manager-applet xorg-xhost aylurs-gtk-shell adw-gtk-theme"
 APPS="kitty thorium-browser-bin code code-marketplace"
-SHELL="ttf-meslo-nerd zsh oh-my-posh zsh-autosuggestions zsh-syntax-highlighting"
+SHELL="ttf-meslo-nerd zsh oh-my-posh zsh-autosuggestions zsh-syntax-highlighting lsd bat cht.sh "
 
 ARCH_DEPENDENCIES="${HYPR} ${UTILS} ${APPS} ${SHELL}" 
 
@@ -82,6 +82,8 @@ mkdir -p "$DOTFILESDIR/backup/.config/"
 [ -d ~/.config/waybar ] && cp -r ~/.config/waybar "$DOTFILESDIR/backup/.config/waybar"
 [ -f ~/.zshrc ] && cp ~/.zshrc "$DOTFILESDIR/backup/.zshrc"
 rm -rf ~/.config/hypr ~/.config/kitty ~/.config/rofi ~/.config/waybar
+
+gsettings set org.gnome.desktop.interface gtk-theme Adwaita
 
 cd $DOTFILESDIR
 bash install.sh
