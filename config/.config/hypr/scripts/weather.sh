@@ -13,9 +13,16 @@ expiry_time=86400
 cached_data=$(<"$cache_file")
 
 if [ $time_diff -lt $expiry_time ] && [ -n "$cached_data" ]; then
+        if [[ $cached_data =~ "Unknown location" ]]; then
+                echo ""
+        fi
         echo "$cached_data"
         exit
 fi
 
 response=$(curl -s wttr.in/?format=%c+%t 2>/dev/null | sed 's/+/ /')
-echo $response | tee "$cache_file"
+if [[ $response =~ "Unknown location" ]]; then
+    echo ""
+else
+    echo "$response" | tee "$cache_file"
+fi
