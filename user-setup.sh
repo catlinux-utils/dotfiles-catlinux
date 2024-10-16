@@ -8,7 +8,7 @@ RED='\e[31m'
 YELLOW='\e[33m'
 GREEN='\e[32m'
 
-DOTFILESDIR="$HOME/dotfiles-catlinux"
+DOTFILESDIR="$HOME/github/dotfiles-catlinux"
 
 HYPR="hyprland hyprlock hypridle hyprshot hyprpolkitagent-git xdg-desktop-portal-hyprland xdg-desktop-portal-gtk qt5-wayland qt6-wayland qt6ct-kde kvantum"
 UTILS="swww rofi-wayland wl-clipboard gnome-keyring polkit-gnome network-manager-applet xorg-xhost aylurs-gtk-shell adw-gtk-theme"
