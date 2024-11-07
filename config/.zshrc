@@ -25,6 +25,9 @@ setopt hist_find_no_dups
 # Completion styling
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' menu yes
+zstyle ':completion:*' rehash true
+
+# Bindings
 
 bindkey  "^[[H"   beginning-of-line
 bindkey  "^[[F"   end-of-line
