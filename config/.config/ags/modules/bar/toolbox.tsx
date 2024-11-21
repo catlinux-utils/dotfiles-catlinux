@@ -1,20 +1,27 @@
 import { exec, execAsync } from "astal";
 
 export default function ToolBox() {
-  let idleEnabled = exec("pidof wayland-idle-inhibitor.py") ? true : false;
+  let idleEnabled = false;
+
+  execAsync(["bash", "-c", "pidof wayland-idle-inhibitor.py"]).then(
+    (output) => {
+      idleEnabled = Boolean(output.trim());
+    }
+  );
+
   return (
-    <box className="tool-box def_box">
+    <box className="tool-box group">
       <button
-        className="def_item"
+        className="item"
         onClicked={() => execAsync(["bash", "-c", "hyprshot -m region -z"])}
       >
-        <icon>applets-screenshooter-symbolic</icon>
+        <icon icon="applets-screenshooter-symbolic" />
       </button>
       <button
-        className="def_item"
+        className="item"
         onClicked={(self) => {
           idleEnabled = !idleEnabled;
-          self.toggleClassName("def_item_enabled", idleEnabled);
+          self.toggleClassName("item_enabled", idleEnabled);
           if (idleEnabled)
             execAsync([
               "bash",
@@ -24,7 +31,7 @@ export default function ToolBox() {
           else execAsync("pkill -f wayland-idle-inhibitor.py").catch(print);
         }}
       >
-        <icon>clock</icon>
+        <icon icon="clock" />
       </button>
     </box>
   );

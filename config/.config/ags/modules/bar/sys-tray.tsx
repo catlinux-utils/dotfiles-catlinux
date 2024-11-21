@@ -15,6 +15,7 @@ export default function SysTray() {
 
           return (
             <button
+              className="item"
               tooltipMarkup={bind(item, "tooltipMarkup")}
               onDestroy={() => menu?.destroy()}
               onClickRelease={(self) => {
