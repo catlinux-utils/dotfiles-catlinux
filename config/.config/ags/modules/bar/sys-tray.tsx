@@ -6,7 +6,7 @@ export default function SysTray() {
   const tray = Tray.get_default();
 
   return (
-    <box className="tray def_box">
+    <box className="tray group">
       {bind(tray, "items").as((items) =>
         items.map((item) => {
           if (item.iconThemePath) App.add_icons(item.iconThemePath);

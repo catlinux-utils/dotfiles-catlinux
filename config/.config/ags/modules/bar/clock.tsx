@@ -7,6 +7,10 @@ export default function Time({ format = "%H:%M - %A %e." }) {
   );
 
   return (
-    <label className="Time" onDestroy={() => time.drop()} label={time()} />
+    <label
+      className="time group"
+      onDestroy={() => time.drop()}
+      label={time()}
+    />
   );
 }

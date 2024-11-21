@@ -11,25 +11,18 @@ export default function Workspaces(): JSX.Element {
           : hyprland.dispatch("workspace", "-1");
       }}
     >
-      <box className="workspaces def_box">
+      <box className="workspaces group">
         {Array.from({ length: 10 }, (_, i) => i + 1).map((workspaceId) => {
           const className = Variable.derive(
             [bind(hyprland, "workspaces"), bind(hyprland, "focusedWorkspace")],
             (workspaces, focused) => {
               const workspace = workspaces.find((w) => w.id === workspaceId);
               if (!workspace) {
-                return "Workspace";
+                return "workspace";
               }
 
               const occupied = workspace.get_clients().length > 0;
               const active = focused.id === workspaceId;
-              console.log(
-                "workspaceid:",
-                workspaceId,
-                `workspace${active ? " active" : ""}${
-                  occupied ? " occupied" : ""
-                }`
-              );
 
               return `workspace${active ? " active" : ""}${
                 occupied ? " occupied" : ""

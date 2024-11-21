@@ -1,88 +1,44 @@
-$bg: #212223;
-$fg: #f1f1f1;
-$accent: #378df7;
-$radius: 7px;
-
 window.Bar {
-  border: none;
-  box-shadow: none;
-  background-color: $bg;
-  color: $fg;
-  font-size: 1.1em;
-  font-weight: bold;
+  color: #ffffff;
 
+  font-size: 13px;
+  min-height: 10px;
   button {
-    all: unset;
+    min-width: 0;
+    padding-top: 0;
+    padding-bottom: 0;
     background-color: transparent;
-
-    &:hover label {
-      background-color: transparentize($fg, 0.84);
-      border-color: transparentize($accent, 0.8);
+    min-height: 10px;
+  }
+  .workspaces button {
+    padding: 0 6px;
+    background-color: transparent;
+    border-radius: 26px;
+    color: rgb(101, 101, 101);
+    &.active {
+      background-color: rgba(255, 255, 255, 0.187);
     }
-
-    &:active label {
-      background-color: transparentize($fg, 0.8);
+    &.occupied {
+      color: rgb(255, 255, 255);
     }
+    &:hover {
+      box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5);
+    }
+    &.active.occupied {
+      color: rgb(255, 255, 255);
+      background-color: rgba(255, 255, 255, 0.187);
+    }
+  }
+  .group {
+    margin: 2px;
+    padding-left: 4px;
+    padding-right: 4px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    color: #ffffff;
   }
 
   label {
-    transition: 200ms;
-    padding: 0 8px;
-    margin: 2px;
-    border-radius: $radius;
-    border: 1pt solid transparent;
-  }
-
-  .Workspaces .focused label {
-    color: $accent;
-    border-color: $accent;
-  }
-
-  .FocusedClient {
-    color: $accent;
-  }
-
-  .Media .Cover {
-    min-height: 1.2em;
-    min-width: 1.2em;
-    border-radius: $radius;
-    background-position: center;
-    background-size: contain;
-  }
-
-  .Battery label {
-    padding-left: 0;
-    margin-left: 0;
-  }
-
-  .AudioSlider {
-    * {
-      all: unset;
-    }
-
-    icon {
-      margin-right: 0.6em;
-    }
-
-    margin: 0 1em;
-
-    trough {
-      background-color: transparentize($fg, 0.8);
-      border-radius: $radius;
-    }
-
-    highlight {
-      background-color: $accent;
-      min-height: 0.8em;
-      border-radius: $radius;
-    }
-
-    slider {
-      background-color: $fg;
-      border-radius: $radius;
-      min-height: 1em;
-      min-width: 1em;
-      margin: -0.2em;
-    }
+    font-weight: bold;
   }
 }
