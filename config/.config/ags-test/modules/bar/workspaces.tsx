@@ -12,7 +12,7 @@ export default function Workspaces(): JSX.Element {
       }}
     >
       <box className="workspaces def_box">
-        {Array.from({ length: 20 }, (_, i) => i + 1).map((workspaceId) => {
+        {Array.from({ length: 10 }, (_, i) => i + 1).map((workspaceId) => {
           const className = Variable.derive(
             [bind(hyprland, "workspaces"), bind(hyprland, "focusedWorkspace")],
             (workspaces, focused) => {
@@ -23,8 +23,17 @@ export default function Workspaces(): JSX.Element {
 
               const occupied = workspace.get_clients().length > 0;
               const active = focused.id === workspaceId;
+              console.log(
+                "workspaceid:",
+                workspaceId,
+                `workspace${active ? " active" : ""}${
+                  occupied ? " occupied" : ""
+                }`
+              );
 
-              return `Workspace ${active ? "Active" : occupied && "Occupied"}`;
+              return `workspace${active ? " active" : ""}${
+                occupied ? " occupied" : ""
+              }`;
             }
           );
           return (
