@@ -13,26 +13,35 @@ export default function Workspaces(): JSX.Element {
     >
       <box className="workspaces group">
         {Array.from({ length: 10 }, (_, i) => i + 1).map((workspaceId) => {
-          const className = Variable.derive(
-            [bind(hyprland, "workspaces"), bind(hyprland, "focusedWorkspace")],
-            (workspaces, focused) => {
-              const workspace = workspaces.find((w) => w.id === workspaceId);
-              if (!workspace) {
-                return "workspace";
-              }
-
-              const occupied = workspace.get_clients().length > 0;
-              const active = focused.id === workspaceId;
-
-              return `workspace${active ? " active" : ""}${
-                occupied ? " occupied" : ""
-              }`;
-            }
-          );
           return (
             <button
-              className={className()}
+              className={`workspace${
+                hyprland.get_workspace(workspaceId)?.get_clients().length > 0
+                  ? " occupied"
+                  : ""
+              }${
+                hyprland.get_focused_workspace().get_id() === workspaceId
+                  ? " active"
+                  : ""
+              }`}
               onClicked={() => hyprland.dispatch("workspace", `${workspaceId}`)}
+              setup={(self) => {
+                self.hook(hyprland, "event", (_, event) => {
+                  /*if (event === "openwindow" || event === "closewindow") {
+                    return self.toggleClassName(
+                      "occupied",
+                      hyprland.get_workspace(workspaceId)?.get_clients()
+                        .length > 0
+                    );
+                  }*/
+                  if (event === "workspacev2") {
+                    return self.toggleClassName(
+                      "active",
+                      hyprland.get_focused_workspace().get_id() === workspaceId
+                    );
+                  }
+                });
+              }}
             >
               {workspaceId}
             </button>
