@@ -10,30 +10,32 @@ window.Bar {
     min-height: 10px;
   }
 
-  .workspaces {
-    button {
-      padding: 0 6px;
-      background-color: transparent;
-      border-radius: 26px;
-      color: rgb(101, 101, 101);
+  .workspaces button {
+    padding: 0 6px;
+    background-color: transparent;
+    border-radius: 26px;
+    color: rgb(101, 101, 101);
 
-      &.active {
-        background-color: rgba(255, 255, 255, 0.187);
-      }
-
-      &.occupied {
-        color: rgb(255, 255, 255);
-      }
-
-      &:hover {
-        box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5);
-      }
-
-      &.active.occupied {
-        color: rgb(255, 255, 255);
-        background-color: rgba(255, 255, 255, 0.187);
-      }
+    &.active {
+      background-color: rgba(255, 255, 255, 0.187);
     }
+
+    &.occupied {
+      color: rgb(255, 255, 255);
+    }
+
+    &:hover {
+      box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5);
+    }
+
+    &.active.occupied {
+      color: rgb(255, 255, 255);
+      background-color: rgba(255, 255, 255, 0.187);
+    }
+  }
+
+  .tool-box button.item_enabled {
+    background-color: rgba(255, 255, 255, 0.187);
   }
 
   .item {
