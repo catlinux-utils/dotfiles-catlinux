@@ -29,6 +29,11 @@ export default function Workspaces(): JSX.Element {
                   workspaceNumber <= 9 ||
                   hyprland.get_workspace(workspaceNumber) !== null
                 }
+                onClicked={() =>
+                  hyprland.get_focused_workspace().get_id() != workspaceNumber
+                    ? hyprland.dispatch("workspace", `${workspaceNumber}`)
+                    : ""
+                }
                 setup={(self) => {
                   self.hook(hyprland, "event", (_, event) => {
                     if (event === "openwindow" || event === "closewindow") {
