@@ -36,21 +36,18 @@ export default function Workspaces(): JSX.Element {
                 }
                 setup={(self) => {
                   self.hook(hyprland, "event", (_, event) => {
-                    if (event === "openwindow" || event === "closewindow") {
-                      if (
-                        hyprland.get_focused_workspace().get_id() !==
-                        workspaceNumber
-                      ) {
-                        return;
-                      }
+                    if (
+                      event === "openwindow" ||
+                      event === "closewindow" ||
+                      event === "movewindowv2" ||
+                      event === "movewindow"
+                    ) {
+                      let ws = hyprland
+                        .get_clients()
+                        .some((c) => c.get_workspace()?.id === workspaceNumber);
 
-                      self.toggleClassName(
-                        "occupied",
-                        (hyprland.get_workspace(workspaceNumber)?.get_clients()
-                          .length ?? 0) !== 0
-                      );
+                      self.toggleClassName("occupied", ws);
                     }
-
                     if (event === "workspacev2") {
                       self.toggleClassName(
                         "active",

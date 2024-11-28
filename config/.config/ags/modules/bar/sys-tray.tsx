@@ -10,7 +10,6 @@ export default function SysTray() {
       {bind(tray, "items").as((items) =>
         items.map((item) => {
           if (item.iconThemePath) App.add_icons(item.iconThemePath);
-
           const menu = item.create_menu();
 
           return (
