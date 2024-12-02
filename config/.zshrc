@@ -42,4 +42,5 @@ alias lt='ls --tree'
 alias cat='bat'
 
 export HSA_OVERRIDE_GFX_VERSION=10.3.0
+export EDITOR=nvim
 
