@@ -85,6 +85,8 @@ mkdir -p "$DOTFILESDIR/backup/.config/"
 rm -rf ~/.config/hypr ~/.config/kitty ~/.config/rofi ~/.config/waybar
 
 gsettings set org.gnome.desktop.interface gtk-theme adw-gtk3-dark
+gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+
 
 cd $DOTFILESDIR
 bash install.sh
