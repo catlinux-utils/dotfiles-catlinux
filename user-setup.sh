@@ -10,8 +10,8 @@ GREEN='\e[32m'
 
 DOTFILESDIR="$HOME/github/dotfiles-catlinux"
 
-HYPR="hyprland hyprlock hypridle hyprshot hyprpolkitagent-git xdg-desktop-portal-hyprland xdg-desktop-portal-gtk qt5-wayland qt6-wayland qt6ct-kde kvantum"
-UTILS="swww rofi-wayland rofimoji wl-clipboard gnome-keyring polkit-gnome network-manager-applet xorg-xhost aylurs-gtk-shell adw-gtk-theme python-setproctitle"
+HYPR="hyprland-git hyprlock-git hypridle-git hyprshot hyprpolkitagent-git xdg-desktop-portal-hyprland-git xdg-desktop-portal-gtk qt5-wayland qt6-wayland qt6ct kvantum"
+UTILS="rofi-wayland wl-clipboard gnome-keyring polkit-gnome libgnome-keyring network-manager-applet xorg-xhost aylurs-gtk-shell adw-gtk-theme python-setproctitle"
 APPS="kitty thorium-browser-bin code code-marketplace"
 SHELL="ttf-meslo-nerd zsh oh-my-posh zsh-autosuggestions zsh-syntax-highlighting lsd bat cht.sh nvim"
 
@@ -61,7 +61,7 @@ if [[ ! -d "$DOTFILESDIR" ]]; then
 fi
 
 if [[ ! -d "$DOTFILESDIR/.git" ]]; then
-    echo -e "${YELLOW}Cloning neovim repository into: $DOTFILESDIR${RC}"
+    echo -e "${YELLOW}Cloning dotfiles-catlinux repository into: $DOTFILESDIR${RC}"
     git clone https://github.com/catlinux-utils/dotfiles-catlinux "$DOTFILESDIR"
     if [[ $? -eq 0 ]]; then
         echo -e "${GREEN}Successfully cloned dotfiles-catlinux repository${RC}"
@@ -80,14 +80,18 @@ mkdir -p "$DOTFILESDIR/backup/.config/"
 [ -d ~/.config/hypr ] && cp -r ~/.config/hypr "$DOTFILESDIR/backup/.config/hypr"
 [ -d ~/.config/kitty ] && cp -r ~/.config/kitty "$DOTFILESDIR/backup/.config/kitty"
 [ -d ~/.config/rofi ] && cp -r ~/.config/rofi "$DOTFILESDIR/backup/.config/rofi"
-[ -d ~/.config/waybar ] && cp -r ~/.config/waybar "$DOTFILESDIR/backup/.config/waybar"
+[ -d ~/.config/ags ] && cp -r ~/.config/ags "$DOTFILESDIR/backup/.config/ags"
 [ -f ~/.zshrc ] && cp ~/.zshrc "$DOTFILESDIR/backup/.zshrc"
-rm -rf ~/.config/hypr ~/.config/kitty ~/.config/rofi ~/.config/waybar
+rm -rf ~/.config/hypr ~/.config/kitty ~/.config/rofi ~/.config/ags
 
 gsettings set org.gnome.desktop.interface gtk-theme adw-gtk3-dark
 gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 
 
 cd $DOTFILESDIR
-bash install.sh
+bash $DOTFILESDIR/install.sh
+
+bash $DOTFILESDIR/setup-scripts/system-setup.sh
+bash $DOTFILESDIR/setup-scripts/vscode-setup.sh
+bash $DOTFILESDIR/setup-scripts/uwsm-systemd.sh
 
