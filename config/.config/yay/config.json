@@ -1,3 +1,4 @@
 {
-	"devel": true
+  "devel": true,
+  "removemake": "true"
 }

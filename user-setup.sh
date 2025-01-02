@@ -1,8 +1,5 @@
 #!/bin/bash
 
-#Source: https://github.com/ChrisTitusTech/neovim
-#modified by catlinux
-
 RC='\e[0m'
 RED='\e[31m'
 YELLOW='\e[33m'
