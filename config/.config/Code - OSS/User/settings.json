@@ -3,7 +3,7 @@
   "window.titleBarStyle": "custom",
   "workbench.activityBar.location": "top",
   "terminal.integrated.fontFamily": "MesloLGS Nerd Font",
-  "telemetry.telemetryLevel": "error",
+  "telemetry.telemetryLevel": "off",
   "explorer.confirmDragAndDrop": false,
   "editor.formatOnSave": true,
   "editor.formatOnPaste": true,

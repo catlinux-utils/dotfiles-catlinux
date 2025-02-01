@@ -27,7 +27,7 @@ export default function ToolBox(): JSX.Element {
         }}
         setup={(self: any) => self.toggleClassName("item_enabled", idleEnabled)}
       >
-        <icon icon="clock" />
+        <icon icon="preferences-system-time-symbolic" />
       </button>
     </box>
   );
