@@ -9,7 +9,12 @@ export default function Workspaces(): JSX.Element {
     <eventbox
       onScroll={(_, event) => {
         const direction = event.delta_y > 0 ? "+1" : "-1";
-        if (hyprland.get_focused_workspace().get_id() > 1 && direction === "-1")
+        if (
+          !(
+            hyprland.get_focused_workspace().get_id() === 1 &&
+            direction === "-1"
+          )
+        )
           hyprland.dispatch("workspace", direction);
       }}
     >
