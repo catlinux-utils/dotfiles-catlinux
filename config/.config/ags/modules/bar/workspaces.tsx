@@ -1,5 +1,7 @@
 import Hyprland from "gi://AstalHyprland";
 
+const workspaceCount: number = 15;
+
 export default function Workspaces(): JSX.Element {
   const hyprland = Hyprland.get_default();
 
@@ -7,15 +9,16 @@ export default function Workspaces(): JSX.Element {
     <eventbox
       onScroll={(_, event) => {
         const direction = event.delta_y > 0 ? "+1" : "-1";
-        hyprland.dispatch("workspace", direction);
+        if (hyprland.get_focused_workspace().get_id() > 1 && direction === "-1")
+          hyprland.dispatch("workspace", direction);
       }}
     >
       <box className="workspaces group">
-        {Array.from({ length: 10 }, (_, index) => index + 1).map(
+        {Array.from({ length: workspaceCount }, (_, index) => index + 1).map(
           (workspaceNumber) => {
             return (
               <button
-                className={`workspace${
+                className={`workspace item${
                   hyprland.get_workspace(workspaceNumber)?.get_clients()
                     .length > 0
                     ? " occupied"
@@ -26,7 +29,7 @@ export default function Workspaces(): JSX.Element {
                     : ""
                 }`}
                 visible={
-                  workspaceNumber <= 9 ||
+                  workspaceNumber <= workspaceCount ||
                   hyprland.get_workspace(workspaceNumber) !== null
                 }
                 onClicked={() =>

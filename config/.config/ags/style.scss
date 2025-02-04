@@ -1,45 +1,48 @@
+@use "sass:color";
+
 window.Bar {
   color: #ffffff;
-  font-size: 13px;
-  min-height: 10px;
+  font-size: 0.9em;
+  font-weight: bold;
 
-  button {
+  //min-height: 10px;
+
+  button,
+  label {
     min-width: 0;
+    min-height: 0;
     padding: 0;
     background-color: transparent;
-    min-height: 10px;
   }
 
-  .workspaces button {
-    padding: 0 6px;
-    background-color: transparent;
-    border-radius: 26px;
-    color: rgb(101, 101, 101);
+  .workspaces {
+    button {
+      padding: 0 2px;
+      color: rgb(101, 101, 101);
 
-    &.active {
-      background-color: rgba(255, 255, 255, 0.187);
+      &.active {
+        background-color: color.adjust(rgb(255, 255, 255), $alpha: -0.813);
+      }
+
+      &.occupied {
+        color: rgb(255, 255, 255);
+      }
+
+      &:hover {
+        box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5);
+      }
     }
-
-    &.occupied {
-      color: rgb(255, 255, 255);
-    }
-
-    &:hover {
-      box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5);
-    }
-
-    &.active.occupied {
-      color: rgb(255, 255, 255);
-      background-color: rgba(255, 255, 255, 0.187);
+    label {
+      min-width: 0.9em;
     }
   }
 
   .tool-box button.item_enabled {
-    background-color: rgba(255, 255, 255, 0.187);
+    background-color: color.adjust(rgb(255, 255, 255), $alpha: -0.813);
   }
 
   .item {
-    padding: 0 2px;
+    margin: 0 2px;
     background-color: transparent;
     border-radius: 26px;
     color: #ffffff;
@@ -51,9 +54,5 @@ window.Bar {
     background-color: rgba(0, 0, 0, 0.3);
     border-radius: 5px;
     color: #ffffff;
-  }
-
-  label {
-    font-weight: bold;
   }
 }
