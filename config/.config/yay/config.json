@@ -1,5 +1,5 @@
 {
   "devel": true,
-  "removemake": "true",
+  "removemake": "yes",
   "diffmenu": false
 }
