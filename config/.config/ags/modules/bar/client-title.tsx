@@ -7,7 +7,15 @@ export default function ClientTitle() {
   return (
     <box className="client-title group" visible={focused.as(Boolean)}>
       {focused.as(
-        (client) => client && <label label={bind(client, "title").as(String)} />
+        (client) =>
+          client && (
+            <label
+              className={"client-title-label"}
+              truncate
+              maxWidthChars={42}
+              label={bind(client, "title").as(String)}
+            />
+          )
       )}
     </box>
   );
