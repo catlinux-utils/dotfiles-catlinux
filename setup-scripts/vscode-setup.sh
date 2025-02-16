@@ -2,6 +2,8 @@
 
 
 ARCH_DEPENDENCIES="code"
+DOTFILESDIR="$HOME/github/dotfiles-catlinux"
+
 if [ -f /etc/os-release ]; then  
     . /etc/os-release
 
@@ -15,8 +17,8 @@ else
     echo -e "${RED}Unable to determine OS. Please install required packages manually.${RC}"
 fi
 
-cp config/.config/Code/User/settings.json ~/.config/Code/User/settings.json
-cp config/.config/Code - OSS/User/settings.json ~/.config/Code - OSS/User/settings.json
+cp $DOTFILESDIR/config/.config/Code/User/settings.json ~/.config/Code/User/settings.json
+cp $DOTFILESDIR/config/.config/Code - OSS/User/settings.json ~/.config/Code - OSS/User/settings.json
 code --install-extension codeium.codeium 
 code --install-extension esbenp.prettier-vscode
 code --install-extension ms-ceintl.vscode-language-pack-pl
