@@ -86,9 +86,4 @@ gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 
 
 cd $DOTFILESDIR
-bash $DOTFILESDIR/install.sh
-
-bash $DOTFILESDIR/setup-scripts/system-setup.sh
-bash $DOTFILESDIR/setup-scripts/vscode-setup.sh
-bash $DOTFILESDIR/setup-scripts/uwsm-systemd.sh
 
