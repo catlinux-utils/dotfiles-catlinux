@@ -7,7 +7,7 @@ GREEN='\e[32m'
 
 DOTFILESDIR="$HOME/github/dotfiles-catlinux"
 
-HYPR="hyprland-git hyprlock-git hypridle-git hyprshot hyprpolkitagent-git xdg-desktop-portal-hyprland-git xdg-desktop-portal-gtk qt5-wayland qt6-wayland qt6ct kvantum"
+HYPR="hyprland hyprlock hyprpaper hypridle hyprshot hyprpolkitagent xdg-desktop-portal-hyprland xdg-desktop-portal-gtk qt5-wayland qt6-wayland qt6ct kvantum"
 UTILS="rofi-wayland wl-clipboard gnome-keyring polkit-gnome libgnome-keyring network-manager-applet xorg-xhost aylurs-gtk-shell adw-gtk-theme python-setproctitle"
 APPS="kitty thorium-browser-bin code code-marketplace"
 SHELL="ttf-meslo-nerd zsh oh-my-posh zsh-autosuggestions zsh-syntax-highlighting lsd bat cht.sh nvim"
