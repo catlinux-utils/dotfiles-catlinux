@@ -1,6 +1,8 @@
 #!/bin/bash
 
 ARCH_DEPENDENCIES="sddm plasma-desktop"
+DOTFILESDIR="$HOME/github/dotfiles-catlinux"
+
 if [ -f /etc/os-release ]; then  
     . /etc/os-release
 
@@ -15,10 +17,10 @@ else
 fi
 
 echo "Installing sddm.conf"
-sudo install -Dm644 root/etc/sddm.conf.d/sddm.conf /etc/sddm.conf.d/sddm.conf
+sudo install -Dm644 $DOTFILESDIR/root/etc/sddm.conf.d/sddm.conf /etc/sddm.conf.d/sddm.conf
 
 echo "Installing theme.conf.user"
-sudo install -Dm644 root/usr/share/sddm/themes/breeze/theme.conf.user /usr/share/sddm/themes/breeze/theme.conf.user
+sudo install -Dm644 $DOTFILESDIR/root/usr/share/sddm/themes/breeze/theme.conf.user /usr/share/sddm/themes/breeze/theme.conf.user
 
 echo "Installing arch-windows.png"
-sudo install -Dm644 root/usr/share/backgrounds/catlinux/arch-windows.png /usr/share/backgrounds/catlinux/arch-windows.png
+sudo install -Dm644 $DOTFILESDIR/root/usr/share/backgrounds/catlinux/arch-windows.png /usr/share/backgrounds/catlinux/arch-windows.png
