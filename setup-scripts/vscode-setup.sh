@@ -10,7 +10,7 @@ if [ -f /etc/os-release ]; then
     case "${ID_LIKE:-$ID}" in
         arch|manjaro)
             echo "Installing dependencies for Arch-based systems"
-            sudo pacman -S --noconfirm --needed $ARCH_DEPENDENCIES
+            sudo pacman -Sy --noconfirm --needed $ARCH_DEPENDENCIES
         ;;
     esac
 else
