@@ -10,7 +10,7 @@ DOTFILESDIR="$HOME/github/dotfiles-catlinux"
 HYPR="hyprland hyprlock hyprpaper hypridle hyprshot hyprpolkitagent xdg-desktop-portal-hyprland xdg-desktop-portal-gtk uwsm qt5-wayland qt6-wayland qt6ct kvantum"
 UTILS="rofi-wayland wl-clipboard gnome-keyring polkit-gnome libgnome-keyring network-manager-applet xorg-xhost aylurs-gtk-shell adw-gtk-theme python-setproctitle"
 APPS="kitty thorium-browser-bin code code-marketplace"
-SHELL="ttf-meslo-nerd zsh oh-my-posh zsh-autosuggestions zsh-syntax-highlighting lsd bat cht.sh nvim"
+SHELL="ttf-meslo-nerd zsh oh-my-zsh-git zsh-autosuggestions zsh-syntax-highlighting lsd bat cht.sh nvim"
 
 ARCH_DEPENDENCIES="${HYPR} ${UTILS} ${APPS} ${SHELL}" 
 
@@ -81,9 +81,6 @@ mkdir -p "$DOTFILESDIR/backup/.config/"
 [ -f ~/.zshrc ] && cp ~/.zshrc "$DOTFILESDIR/backup/.zshrc"
 rm -rf ~/.config/hypr ~/.config/kitty ~/.config/rofi ~/.config/ags
 
-gsettings set org.gnome.desktop.interface gtk-theme adw-gtk3-dark
-gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
-
-
 cd $DOTFILESDIR
 
+echo -e "${YELLOW}Run install.sh to copy dotfiles to home folder${RC}"
