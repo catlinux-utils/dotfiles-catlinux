@@ -1,20 +1,24 @@
 import Notifd from "gi://AstalNotifd";
+import { bind } from "astal";
+const notifd = Notifd.get_default();
 
-function Notification() {
-  const notifd = Notifd.get_default();
-  return (<box
-    class_name="notification"
-    visible=11popups.as((p) => p.length > 0)>
+export default function Notification(): JSX.Element {
+  /*return (
+    <box className="notification group">
+      <icon icon="preferences-system-notifications-symbolic" />
+      <label label={bind(notifd, "popups").as((p) => p[0]?.summary || "")} />
     </box>
-    children= [
-      Widget.Icon({
-        icon: "preferences-system-notifications-symbolic",
-      }),
-      Widget.Label({
-        label: popups.as((p) => p[0]?.summary || ""),
-      }),
-    ],
+  );*/
+
+  return (
+    <box className="notification group">
+      <icon icon="preferences-system-notifications-symbolic" />
+      <label
+        label={bind(notifd, "notifications").as(
+          (notifs) => `${notifs[0].get_summary() || ""}`
+        )}
+      ></label>
+    </box>
   );
 }
-
 export { Notification };

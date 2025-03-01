@@ -6,7 +6,7 @@ import Clock from "./bar/clock";
 import SysTray from "./bar/sys-tray";
 import BatteryLabel from "./bar/battery-label";
 import ToolBox from "./bar/toolbox";
-
+import Monitoring from "./bar/monitoring";
 export default function Bar(monitor: Gdk.Monitor) {
   return (
     <window
@@ -28,6 +28,7 @@ export default function Bar(monitor: Gdk.Monitor) {
           <ClientTitle />
         </box>
         <box hexpand halign={Gtk.Align.END}>
+          <Monitoring />
           <ToolBox />
           <SysTray />
           <BatteryLabel />
