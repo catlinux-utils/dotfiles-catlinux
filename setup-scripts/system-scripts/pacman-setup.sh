@@ -18,6 +18,7 @@ if [ -f /etc/os-release ]; then
     esac
 else
     echo -e "${RED}Unable to determine OS. Please install required packages manually.${RC}"
+    exit 0
 fi
 
 echo -e "${GREEN}Configuring pacman...${RC}"
