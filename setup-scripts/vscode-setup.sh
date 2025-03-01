@@ -23,3 +23,5 @@ code --install-extension codeium.codeium
 code --install-extension esbenp.prettier-vscode
 code --install-extension ms-ceintl.vscode-language-pack-pl
 code --install-extension eamodio.gitlens
+code --install-extension mhutchie.git-graph
+code --install-extension donjayamanne.githistory
