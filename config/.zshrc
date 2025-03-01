@@ -70,7 +70,7 @@ ZSH_CUSTOM=$HOME/.config/ohmyzsh
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting archlinux)
+plugins=(git gh zsh-autosuggestions zsh-syntax-highlighting archlinux)
 
 # User configuration
 
@@ -100,6 +100,8 @@ plugins=(git zsh-autosuggestions zsh-syntax-highlighting archlinux)
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+$ZSH_CUSTOM/aliases.zsh
 
 ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
 if [[ ! -d $ZSH_CACHE_DIR ]]; then
