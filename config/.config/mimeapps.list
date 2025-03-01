@@ -1,3 +1,0 @@
-[Default Applications]
-x-scheme-handler/http=thorium-browser.desktop
-x-scheme-handler/https=thorium-browser.desktop
