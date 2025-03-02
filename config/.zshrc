@@ -102,6 +102,7 @@ plugins=(git gh zsh-autosuggestions zsh-syntax-highlighting archlinux)
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 $ZSH_CUSTOM/aliases.zsh
+$ZSH_CUSTOM/exports.zsh
 
 ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
 if [[ ! -d $ZSH_CACHE_DIR ]]; then
