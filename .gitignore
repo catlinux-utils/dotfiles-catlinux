@@ -1,5 +1,7 @@
-PKG/pkg
-PKG/src
-PKG/dotfiles-catlinux
-PKG/*.pkg.*
+PKGBUILDS/*/pkg
+PKGBUILDS/*/src
+PKGBUILDS/dotfiles-catlinux
+PKGBUILDS/*/*.pkg.*
+PKGBUILDS/*/*/*
+
 backup

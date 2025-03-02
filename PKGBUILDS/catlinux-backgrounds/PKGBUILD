@@ -1,0 +1,19 @@
+pkgname=catlinux-backgrounds
+pkgver=1
+pkgrel=4
+pkgdesc="Dotfiles for CatLinux"
+arch=('any')
+url="https://github.com/catlinux-utils/dotfiles-catlinux"
+license=('GPL')
+depends=()
+makedepends=('git')
+source=("$pkgname::git+$url.git")
+md5sums=('SKIP')
+
+package() {
+    install -dm755 "$pkgdir/usr/share/backgrounds/catlinux/"
+    cp "$srcdir/$pkgname/root/usr/share/backgrounds/catlinux/arch-windows.png" "$pkgdir/usr/share/backgrounds/catlinux/"
+}
+
+
+

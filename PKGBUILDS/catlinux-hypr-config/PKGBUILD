@@ -1,0 +1,19 @@
+pkgname=catlinux-hypr-config
+pkgver=1
+pkgrel=4
+pkgdesc="Dotfiles for CatLinux"
+arch=('any')
+url="https://github.com/catlinux-utils/dotfiles-catlinux"
+license=('GPL')
+depends=(catlinux-backgrounds hyprland hyprlock hyprpaper hypridle hyprshot hyprpolkitagent xdg-desktop-portal-hyprland xdg-desktop-portal-gtk uwsm qt5-wayland qt6-wayland qt6ct kvantum rofi-wayland wl-clipboard gnome-keyring polkit-gnome libgnome-keyring network-manager-applet xorg-xhost aylurs-gtk-shell-git adw-gtk-theme python-setproctitle kitty ttf-meslo-nerd zsh oh-my-zsh-git lsd bat cht.sh neovim)
+makedepends=('git')
+source=("$pkgname::git+$url.git")
+md5sums=('SKIP')
+
+package() {
+    install -dm755 "$pkgdir/usr/share/catlinux/hypr-config"
+    cp -r "$srcdir/$pkgname/config/." "$pkgdir/usr/share/catlinux/hypr-config/"
+}
+
+
+
