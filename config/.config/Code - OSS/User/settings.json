@@ -11,5 +11,6 @@
   "git.confirmSync": false,
   "[shellscript]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
-  }
+  },
+  "git.suggestSmartCommit": false
 }
