@@ -12,22 +12,22 @@ command_exists() {
     command -v "$1" >/dev/null 2>&1
 }
 
-if [ -f /etc/os-release ]; then  
+if [ -f /etc/os-release ]; then
     . /etc/os-release
 
     case "${ID_LIKE:-$ID}" in
-        arch|manjaro)
-            echo -e "${BLUE}Installing dependencies for Arch-based systems${RC}"
-            sudo pacman -Sy --noconfirm --needed $ARCH_DEPENDENCIES
+    arch | manjaro)
+        echo -e "${BLUE}Installing dependencies for Arch-based systems${RC}"
+        sudo pacman -Sy --noconfirm --needed $ARCH_DEPENDENCIES
 
-             if ! command_exists yay && ! command_exists paru; then
-                echo -e "${YELLOW}Installing yay as AUR helper...${RC}"
-                sudo pacman --noconfirm -S base-devel git
-                cd /tmp && git clone https://aur.archlinux.org/yay-bin.git
-                cd yay-bin && makepkg --noconfirm -si
-            else
-                echo -e "${GREEN}AUR helper already installed${RC}"
-            fi
+        if ! command_exists yay && ! command_exists paru; then
+            echo -e "${YELLOW}Installing yay as AUR helper...${RC}"
+            sudo pacman --noconfirm -S base-devel git
+            cd /tmp && git clone https://aur.archlinux.org/yay-bin.git
+            cd yay-bin && makepkg --noconfirm -si
+        else
+            echo -e "${GREEN}AUR helper already installed${RC}"
+        fi
         ;;
     esac
 else
@@ -38,6 +38,9 @@ fi
 echo -e "${GREEN}Configuring pacman...${RC}"
 echo -e "${YELLOW}Adding parallel downloading...${RC}"
 sudo sed -i 's/^#ParallelDownloads/ParallelDownloads/' /etc/pacman.conf
+
+echo -e "${YELLOW}Enabling VerbosePkgList...${RC}"
+sudo sed -i 's/^#VerbosePkgLists/VerbosePkgLists/' /etc/pacman.conf
 
 echo -e "${YELLOW}Enabling colors and the easter egg...${RC}"
 sudo sed -i 's/^#Color/Color\nILoveCandy/' /etc/pacman.conf
@@ -57,7 +60,7 @@ echo -e "${BLUE}
 -------------------------------------------------------------------------
 ${RC}"
 TOTAL_MEM=$(cat /proc/meminfo | grep -i 'memtotal' | grep -o '[[:digit:]]*')
-if [[  $TOTAL_MEM -gt 8000000 ]]; then
+if [[ $TOTAL_MEM -gt 8000000 ]]; then
     sudo sed -i "s/#MAKEFLAGS=\"-j2\"/MAKEFLAGS=\"-j$nc\"/g" /etc/makepkg.conf
     sudo sed -i "s/COMPRESSXZ=(xz -c -z -)/COMPRESSXZ=(xz -c -T $nc -z -)/g" /etc/makepkg.conf
 fi
