@@ -1,5 +1,5 @@
 import { bind, Variable } from "astal";
-import { exec } from "astal/process";
+import { exec, execAsync } from "astal/process";
 
 const cpu = Variable(0).poll(1000, [
   "sh",
@@ -24,21 +24,23 @@ export default function Monitoring() {
     <eventbox
       className={"monitoring group"}
       onClick={() => {
-        exec("kitty --hold -e btop");
+        execAsync("kitty --hold -e btop");
       }}
     >
-      <label
-        label={bind(cpu).as((v) => `CPU: ${v.toString()}%`)}
-        className={"item"}
-      />
-      <label
-        label={bind(ram).as((v) => `RAM: ${v.toString()}%`)}
-        className={"item"}
-      />
-      <label
-        label={bind(temp).as((v) => `TEMP: ${v.toString()}°C`)}
-        className={"item"}
-      />
+      <box>
+        <label
+          label={bind(cpu).as((v) => `CPU: ${v.toString()}%`)}
+          className={"item"}
+        />
+        <label
+          label={bind(ram).as((v) => `RAM: ${v.toString()}%`)}
+          className={"item"}
+        />
+        <label
+          label={bind(temp).as((v) => `TEMP: ${v.toString()}°C`)}
+          className={"item"}
+        />
+      </box>
     </eventbox>
   );
 }

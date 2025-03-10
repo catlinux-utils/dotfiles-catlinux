@@ -1,6 +1,6 @@
 import Hyprland from "gi://AstalHyprland";
 
-const workspaceCount: number = 15;
+const workspaceCount: number = 10;
 
 export default function Workspaces(): JSX.Element {
   const hyprland = Hyprland.get_default();
