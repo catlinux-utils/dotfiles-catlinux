@@ -1,4 +1,5 @@
 import { bind, Variable } from "astal";
+import { exec } from "astal/process";
 
 const cpu = Variable(0).poll(1000, [
   "sh",
@@ -20,7 +21,12 @@ const temp = Variable(0).poll(
 
 export default function Monitoring() {
   return (
-    <box className={"monitoring group"}>
+    <eventbox
+      className={"monitoring group"}
+      onClick={() => {
+        exec("kitty --hold -e btop");
+      }}
+    >
       <label
         label={bind(cpu).as((v) => `CPU: ${v.toString()}%`)}
         className={"item"}
@@ -33,6 +39,6 @@ export default function Monitoring() {
         label={bind(temp).as((v) => `TEMP: ${v.toString()}°C`)}
         className={"item"}
       />
-    </box>
+    </eventbox>
   );
 }
