@@ -5,7 +5,7 @@ import Bar from "./modules/bar";
 
 App.start({
   css: style,
-  instanceName: "astral",
+  instanceName: "astal",
   requestHandler(request, res) {
     print(request);
     res("ok");

@@ -11,7 +11,7 @@ export default function ClientTitle() {
           client && (
             <label
               className={"client-title-label"}
-              truncate
+              truncate={true}
               maxWidthChars={70}
               label={bind(client, "title").as(String)}
             />
