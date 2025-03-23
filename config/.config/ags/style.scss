@@ -1,11 +1,11 @@
 @use "sass:color";
-
 window.Bar {
-  color: #ffffff;
-  font-size: 0.9em;
-  font-weight: bold;
+  background-color: rgba(0, 0, 0, 0.192);
+  border-radius: 5px;
 
-  //min-height: 10px;
+  color: #ffffff;
+  font-size: 0.86em;
+  font-weight: bold;
 
   button,
   label {
