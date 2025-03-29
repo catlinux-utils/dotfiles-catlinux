@@ -68,3 +68,8 @@ fi
 echo -e "${YELLOW}Disable options in makepkg.conf...${RC}"
 sudo sed -i '/^OPTIONS=/s/\b lto\b/ !lto/g' /etc/makepkg.conf
 sudo sed -i '/^OPTIONS=/s/\b debug\b/ !debug/g' /etc/makepkg.conf
+
+echo -e "${GREEN}Adding ubuntu keyserver to pacman if not already present${RC}"
+if ! grep -q '^keyserver hkp://keyserver.ubuntu.com' /etc/pacman.d/gnupg/gpg.conf; then
+    echo 'keyserver hkp://keyserver.ubuntu.com' | sudo tee -a /etc/pacman.d/gnupg/gpg.conf >/dev/null
+fi
