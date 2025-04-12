@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-ARCH_DEPENDENCIES="code"
+ARCH_DEPENDENCIES="code ttf-meslo-nerd"
 DOTFILESDIR="$HOME/github/dotfiles-catlinux"
 
 if [ -f /etc/os-release ]; then  
@@ -16,9 +16,14 @@ if [ -f /etc/os-release ]; then
 else
     echo -e "${RED}Unable to determine OS. Please install required packages manually.${RC}"
 fi
+mkdir -p "$HOME/.config/Code/User" "$HOME/.config/Code - OSS/User/"
+cp "$DOTFILESDIR/config/.config/Code/User/settings.json" "$HOME/.config/Code/User/settings.json"
+cp "$DOTFILESDIR/config/.config/Code - OSS/User/settings.json" "$HOME/.config/Code - OSS/User/settings.json"
 
-cp $DOTFILESDIR/config/.config/Code/User/settings.json ~/.config/Code/User/settings.json
-cp $DOTFILESDIR/config/.config/Code - OSS/User/settings.json ~/.config/Code - OSS/User/settings.json
+mkdir -p "$HOME/.vscode" "$HOME/.vscode-oss"
+cp "$DOTFILESDIR/config/.vscode/argv.json" "$HOME/.vscode/argv.json"
+cp "$DOTFILESDIR/config/.vscode-oss/argv.json" "$HOME/.vscode-oss/argv.json"
+
 code --install-extension codeium.codeium 
 code --install-extension esbenp.prettier-vscode
 code --install-extension ms-ceintl.vscode-language-pack-pl
