@@ -71,5 +71,5 @@ sudo sed -i '/^OPTIONS=/s/\b debug\b/ !debug/g' /etc/makepkg.conf
 
 echo -e "${GREEN}Adding ubuntu keyserver to pacman if not already present${RC}"
 if ! grep -q '^keyserver hkp://keyserver.ubuntu.com' /etc/pacman.d/gnupg/gpg.conf; then
-    echo 'keyserver hkp://keyserver.ubuntu.com' | sudo tee -a /etc/pacman.d/gnupg/gpg.conf >/dev/null
+    echo 'keyserver hkp://keyserver.ubuntu.com:80' | sudo tee -a /etc/pacman.d/gnupg/gpg.conf >/dev/null
 fi
