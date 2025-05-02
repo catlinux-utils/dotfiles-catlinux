@@ -12,5 +12,8 @@
   "[shellscript]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
   },
-  "git.suggestSmartCommit": false
+  "git.suggestSmartCommit": false,
+  "[qml]": {
+    "editor.defaultFormatter": "AndreOneti.qml-formatter"
+  }
 }
