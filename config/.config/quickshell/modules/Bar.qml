@@ -8,17 +8,13 @@ import "bar" as BarModules
 Scope {
   Variants {
     model: Quickshell.screens
-
-
     PanelWindow {
       id: barWindow
       property var modelData
       screen: modelData
 
       color: "#00000000"
-      height: 23
-
-
+      height: 20
       visible: true
 
       anchors {
@@ -31,15 +27,19 @@ Scope {
         id: bar
         anchors {
           fill: parent
-          margins: 2
+          margins: 3
         }
-        color: "#31000000"
+        color: "#0b1aa3"
         radius:5
         border.color: "#00000000"
         border.width: 5
 
         RowLayout {
           id: left
+          anchors {
+            fill: parent
+          }
+          height: barWindow.height
           Layout.alignment: Qt.AlignLeft
 
           BarModules.Workspaces {}

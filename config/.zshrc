@@ -104,6 +104,8 @@ plugins=(git gh zsh-autosuggestions zsh-syntax-highlighting archlinux)
 $ZSH_CUSTOM/aliases.zsh
 $ZSH_CUSTOM/exports.zsh
 
+zstyle ':completion:*' rehash true
+
 ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
 if [[ ! -d $ZSH_CACHE_DIR ]]; then
   mkdir $ZSH_CACHE_DIR
