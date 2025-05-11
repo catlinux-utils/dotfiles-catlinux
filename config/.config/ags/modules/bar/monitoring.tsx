@@ -24,7 +24,7 @@ export default function Monitoring() {
     <eventbox
       className={"monitoring group"}
       onClick={() => {
-        execAsync("kitty --hold -e btop");
+        execAsync("kitty -e btop");
       }}
     >
       <box>
