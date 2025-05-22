@@ -14,4 +14,3 @@ else
 fi
 
 git config --global user.name "ThePolishCat"
-git config --global user.email "damianadam000@gmail.com"
