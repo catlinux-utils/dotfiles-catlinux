@@ -11,6 +11,8 @@ export default function ClientTitle() {
           client && (
             <label
               className={"client-title-label"}
+              ellipsize={true}
+              wrap={true}
               truncate={true}
               maxWidthChars={70}
               label={bind(client, "title").as(String)}
