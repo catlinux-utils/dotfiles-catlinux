@@ -19,7 +19,8 @@ mkdir -p "$HOME/.config/Code/User" "$HOME/.config/Code - OSS/User/"
 cp "$DOTFILESDIR/config/.config/Code/User/settings.json" "$HOME/.config/Code/User/settings.json"
 cp "$DOTFILESDIR/config/.config/Code - OSS/User/settings.json" "$HOME/.config/Code - OSS/User/settings.json"
 
-code --install-extension codeium.codeium
+code --install-extension mhutchie.git-graph
+
 code --install-extension esbenp.prettier-vscode
 code --install-extension ms-ceintl.vscode-language-pack-pl
 code --install-extension sourcegraph.cody-ai
