@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 gsettings set org.gnome.desktop.interface font-name "Noto Sans 10"
 gsettings set org.gnome.desktop.interface cursor-theme Adwaita

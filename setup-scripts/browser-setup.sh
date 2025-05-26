@@ -1,5 +1,5 @@
 #!/bin/bash
-
+set -e
 
 ARCH_DEPENDENCIES="thorium-browser-bin" 
 

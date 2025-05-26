@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 ARCH_DEPENDENCIES="zsh oh-my-zsh-git" 
 

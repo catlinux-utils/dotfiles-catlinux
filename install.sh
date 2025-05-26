@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 cp -r config/. $HOME/
 

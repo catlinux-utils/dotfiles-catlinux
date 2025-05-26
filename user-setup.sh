@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 RC='\e[0m'
 RED='\e[31m'

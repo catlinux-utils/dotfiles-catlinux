@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 ARCH_DEPENDENCIES="sddm plasma-desktop"
 DOTFILESDIR="$HOME/github/dotfiles-catlinux"

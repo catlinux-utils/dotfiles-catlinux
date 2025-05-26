@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 cache_file="$HOME/.cache/wttr_cache.txt"
 
 if [ ! -f "$cache_file" ]; then

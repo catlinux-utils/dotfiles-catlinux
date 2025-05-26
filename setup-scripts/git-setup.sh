@@ -1,4 +1,6 @@
 #!/bin/bash
+set -e
+
 ARCH_DEPENDENCIES="git github-cli"
 if [ -f /etc/os-release ]; then  
     . /etc/os-release

@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 ARCH_DEPENDENCIES="code ttf-meslo-nerd"
 DOTFILESDIR="$HOME/github/dotfiles-catlinux"
