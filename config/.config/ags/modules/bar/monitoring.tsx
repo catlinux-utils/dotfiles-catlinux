@@ -29,16 +29,22 @@ export default function Monitoring() {
     >
       <box>
         <label
-          label={bind(cpu).as((v) => `CPU: ${v.toString()}%`)}
+          label={bind(cpu).as((v) => ` CPU: ${v.toString()}%`)}
           className={"item"}
+          wrap={true}
+          truncate={true}
         />
         <label
           label={bind(ram).as((v) => `RAM: ${v.toString()}%`)}
           className={"item"}
+          wrap={true}
+          truncate={true}
         />
         <label
-          label={bind(temp).as((v) => `TEMP: ${v.toString()}°C`)}
+          label={bind(temp).as((v) => `TEMP: ${v.toString()}°C `)}
           className={"item"}
+          wrap={true}
+          truncate={true}
         />
       </box>
     </eventbox>

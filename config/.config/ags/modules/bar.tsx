@@ -14,7 +14,6 @@ export default function Bar(monitor: Gdk.Monitor) {
       gdkmonitor={monitor}
       margin={2.5}
       marginBottom={1}
-      heightRequest={3}
       exclusivity={Astal.Exclusivity.EXCLUSIVE}
       anchor={
         Astal.WindowAnchor.TOP |
