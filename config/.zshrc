@@ -21,3 +21,5 @@ source ${ZIM_HOME}/init.zsh
 
 source ~/.config/zsh/aliases.zsh
 source ~/.config/zsh/exports.zsh
+
+export HSA_OVERRIDE_GFX_VERSION=10.3.0

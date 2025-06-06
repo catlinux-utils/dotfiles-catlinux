@@ -25,10 +25,9 @@ export default function Bar(monitor: Gdk.Monitor) {
       <centerbox>
         <box hexpand halign={Gtk.Align.START}>
           <Workspaces />
-        </box>
-        <box>
           <ClientTitle />
         </box>
+        <box></box>
         <box hexpand halign={Gtk.Align.END}>
           <Monitoring />
           <ToolBox />
