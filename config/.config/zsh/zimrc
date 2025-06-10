@@ -19,6 +19,7 @@ zmodule git-info
 zmodule prompt-pwd 
 
 zmodule catlinux-utils/catlinux-zsh-theme --source catlinux.zsh-theme
+# zsh theme is in: https://github.com/catlinux-utils/catlinux-zsh-theme
 
 #
 # Completion
