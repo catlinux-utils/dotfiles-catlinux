@@ -15,5 +15,6 @@
   "git.suggestSmartCommit": false,
   "[qml]": {
     "editor.defaultFormatter": "AndreOneti.qml-formatter"
-  }
+  },
+  "workbench.sideBar.location": "right"
 }
