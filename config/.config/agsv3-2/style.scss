@@ -1,0 +1,64 @@
+@use "sass:color";
+window.Bar {
+  background-color: #030330;
+  border-radius: 5px;
+
+  color: #ffffff;
+  font-size: 0.88em;
+
+  font-weight: bold;
+
+  button,
+  label {
+    min-width: 0;
+    min-height: 0;
+    padding: 0;
+    background-color: transparent;
+  }
+
+  .client-title-label {
+    line-height: 0.88em;
+    //overflow: hidden;
+  }
+
+  .workspaces {
+    button {
+      padding: 0 2px;
+      color: rgb(101, 101, 101);
+
+      &.active {
+        background-color: color.adjust(rgb(255, 255, 255), $alpha: -0.813);
+      }
+
+      &.occupied {
+        color: rgb(255, 255, 255);
+      }
+
+      &:hover {
+        box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.5);
+      }
+    }
+    label {
+      min-width: 0.9em;
+    }
+  }
+
+  .tool-box button.item_enabled image {
+    color: color.adjust(rgb(255, 255, 255), $alpha: -0.5);
+  }
+
+  .item {
+    margin: 0 2px;
+    background-color: transparent;
+    border-radius: 26px;
+    color: #ffffff;
+  }
+
+  .group {
+    margin: 2px;
+    padding: 0 4px;
+    background-color: #000e32;
+    border-radius: 5px;
+    color: #ffffff;
+  }
+}
